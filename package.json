@@ -1,0 +1,23 @@
+{
+  "name": "riot-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "riot+compiler.min.js",
+  "scripts": {
+    "modal": "http-server ./modal -o"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/k-kuwahara/riot-examples.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k-kuwahara/riot-examples/issues"
+  },
+  "homepage": "https://github.com/k-kuwahara/riot-examples#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
