@@ -1,0 +1,24 @@
+<app>
+  <h2>{ props.title }</h2>
+  <button id="show-modal" onclick={ openModal }>Show Modal</button>
+  <!-- use the modal component, pass in the prop -->
+  <modal if={ state.showModal } close={ closeModal }>
+    <h3 slot="header">{ props.header }</h3>
+  </modal>
+
+  <script>
+    export default {
+      state: {
+        showModal: false
+      },
+      openModal() {
+        this.state.showModal = true
+        this.update()
+      },
+      closeModal() {
+        this.state.showModal = false
+        this.update()
+      }
+    }
+  </script>
+</app>
