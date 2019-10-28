@@ -4,9 +4,7 @@
       <div class="modal-container">
 
         <div class="modal-header">
-          <slot name="header">
-            default header
-          </slot>
+          <slot name="header"></slot>
         </div>
 
         <div class="modal-body">
@@ -14,22 +12,14 @@
         </div>
 
         <div class="modal-footer">
-          <p>
+          <div>
             default footer
             <button class="modal-default-button" onclick={ props.close }>
               OK
             </button>
-          </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <script>
-    export default {
-      onBeforeMount(props, state) {
-        console.log(props)
-      }
-    }
-  </script>
 </modal>
