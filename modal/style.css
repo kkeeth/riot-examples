@@ -1,19 +1,7 @@
 body {
   padding: 15px;
+  margin: 0;
 }
-
-.modal-wrapper {
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 20px 30px;
-  text-align: center;
-  display: table;
-}
-
 a {
   text-decoration: none;
 }
@@ -21,6 +9,16 @@ a {
 button {
   cursor: pointer;
 }
+
+.modal-wrapper {
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+  max-width: 100%;
+}
+
 
 .modal-wrapper:not(:target) {
   opacity: 0;
@@ -45,17 +43,13 @@ button {
 }
 
 .modal-container {
-  box-sizing: border-box;
-  display: table-cell;
   z-index: 20;
-  position: relative;
   width: 300px;
   padding: 20px 30px;
   background-color: #fff;
-  border-radius: 2px;
+  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
-  vertical-align: middle;
 }
 
 .modal-header h3 {
