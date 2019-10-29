@@ -1,0 +1,56 @@
+<app>
+  <h2>{ props.title }</h2>
+  { state.commits }
+  <!-- <div id="demo">
+    <div each={ branch in branches }>
+      <input type="radio"
+        :id="branch"
+        :value="branch"
+        name="branch"
+        v-model="currentBranch">
+      <label :for="branch">{ branch }</label>
+    </template>
+    <p>riotjs/riot@{ state.currentBranch }</p>
+    <ul>
+      <li each={ record in state.commits }>
+        <a href={ record.html_url } target="_blank" class="commit">{ record.sha.slice(0, 7) }</a>
+        - <span class="message">{ truncate(record.commit.message) }</span><br>
+        by <span class="author"><a href="record.author.html_url" target="_blank">{ record.commit.author.name }</a></span>
+        at <span class="date">{ record.commit.author.date | formatDate }</span>
+      </li>
+    </ul>
+  </div> -->
+
+  <script>
+    const apiURL = "https://api.github.com/repos/riot/riot/commits?per_page=3&sha="
+    const branches = ['master', 'dev']
+
+    export default {
+      state: {
+        currentBranch: 'master',
+        commits: null
+      },
+      onBeforeMount() {
+        console.log(this)
+        this.fetchData()
+      },
+      truncate(v) {
+        const newline = v.indexOf('\n')
+        return newline > 0 ? v.slice(0, newline) : v
+      },
+      formatDate(v) {
+        return v.replace(/T|Z/g, ' ')
+      },
+      fetchData() {
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', apiURL + this.state.currentBranch)
+        xhr.onload = () => {
+          this.state.commits = JSON.parse(xhr.responseText)
+          console.log(this.state.commits[0].html_url)
+        }
+        xhr.send()
+        this.update()
+      }
+    }
+  </script>
+</app>

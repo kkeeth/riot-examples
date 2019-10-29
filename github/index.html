@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Riot.js Commits Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="riot+compiler.min.js"></script>
+  </head>
+  <body>
+    <!-- app -->
+    <app></app>
+
+    <!-- tags -->
+    <script data-src="app.riot" type="riot"></script>
+    <script>
+      riot
+        .compile()
+        .then(() => {
+          riot.mount('app', {
+            title: 'Riot.js commits viewer'
+          })
+        })
+        .then(e => {
+          console.error(e)
+        })
+    </script>
+  </body>
+</html>
