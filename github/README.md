@@ -1,3 +1,3 @@
 # Riot4 Commits Viewer
 
-demo: [CodeSandbox](https://codesandbox.io/s/riot4-modal-component-nlqi9)
+demo: [CodeSandbox](https://codesandbox.io/embed/riot4-github-demo-yt33k)
