@@ -1,14 +1,13 @@
 <app>
   <h2>{ props.title }</h2>
-  { state.commits }
-  <!-- <div id="demo">
-    <div each={ branch in branches }>
+  <div id="demo">
+    <template each={ branch in props.branches }>
       <input type="radio"
-        :id="branch"
-        :value="branch"
+        id={ branch }
+        value={ branch }
         name="branch"
-        v-model="currentBranch">
-      <label :for="branch">{ branch }</label>
+        onclick={ selectBranch }>
+      <label for={ branch }>{ branch }</label>
     </template>
     <p>riotjs/riot@{ state.currentBranch }</p>
     <ul>
@@ -16,14 +15,13 @@
         <a href={ record.html_url } target="_blank" class="commit">{ record.sha.slice(0, 7) }</a>
         - <span class="message">{ truncate(record.commit.message) }</span><br>
         by <span class="author"><a href="record.author.html_url" target="_blank">{ record.commit.author.name }</a></span>
-        at <span class="date">{ record.commit.author.date | formatDate }</span>
+        at <span class="date">{ formatDate(record.commit.author.date)}</span>
       </li>
     </ul>
-  </div> -->
+  </div>
 
   <script>
-    const apiURL = "https://api.github.com/repos/riot/riot/commits?per_page=3&sha="
-    const branches = ['master', 'dev']
+    const apiURL = "https://api.github.com/repos/riot/riot/commits?per_page=5&sha="
 
     export default {
       state: {
@@ -31,7 +29,10 @@
         commits: null
       },
       onBeforeMount() {
-        console.log(this)
+        this.fetchData()
+      },
+      selectBranch(e) {
+        this.state.currentBranch = e.target.value
         this.fetchData()
       },
       truncate(v) {
@@ -44,12 +45,11 @@
       fetchData() {
         const xhr = new XMLHttpRequest()
         xhr.open('GET', apiURL + this.state.currentBranch)
+        xhr.send()
         xhr.onload = () => {
           this.state.commits = JSON.parse(xhr.responseText)
-          console.log(this.state.commits[0].html_url)
+          this.update()
         }
-        xhr.send()
-        this.update()
       }
     }
   </script>

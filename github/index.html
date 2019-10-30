@@ -19,7 +19,8 @@
         .compile()
         .then(() => {
           riot.mount('app', {
-            title: 'Riot.js commits viewer'
+            title: 'Riot.js commits viewer',
+            branches: ['master', 'dev']
           })
         })
         .then(e => {
