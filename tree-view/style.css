@@ -1,0 +1,16 @@
+body {
+  padding: 15px;
+  font-family: Josefin-sans, Consolas, monospace;
+  color: #444;
+}
+.item {
+  cursor: pointer;
+}
+.bold {
+  font-weight: bold;
+}
+ul {
+  padding-left: 1em;
+  line-height: 1.5em;
+  list-style-type: dot;
+}

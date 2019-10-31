@@ -5,7 +5,8 @@
   "main": "riot+compiler.min.js",
   "scripts": {
     "modal": "http-server ./modal -o",
-    "github": "http-server ./github -o"
+    "github": "http-server ./github -o",
+    "tree": "http-server ./tree-view -o"
   },
   "repository": {
     "type": "git",

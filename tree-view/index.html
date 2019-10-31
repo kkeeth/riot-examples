@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Riot.js Tree Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="riot+compiler.min.js"></script>
+  </head>
+  <body>
+    <!-- app -->
+    <app></app>
+
+    <!-- tags -->
+    <script data-src="app.riot" type="riot"></script>
+    <script data-src="tree-item.riot" type="riot"></script>
+    <script>
+      riot
+        .compile()
+        .then(() => {
+          riot.mount('app', {
+            title: 'Riot.js Tree viewer',
+            treeData: {
+              name: 'My Tree',
+              children: [
+                { name: 'hello' },
+                { name: 'wat' },
+                {
+                  name: 'child folder1',
+                  children: [
+                    {
+                      name: 'child folder2',
+                      children: [
+                        { name: 'hello' },
+                        { name: 'wat' }
+                      ]
+                    },
+                    { name: 'hello' },
+                    { name: 'wat' },
+                    {
+                      name: 'child folder2',
+                      children: [
+                        { name: 'hello' },
+                        { name: 'wat' }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          })
+        })
+        .catch(e => {
+          console.error(e)
+        })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<app>
+  <h2>{ props.title }</h2>
+
+  <p>(You can double click on an item to turn it into a folder.)</p>
+
+  <!-- the demo root element -->
+  <ul id="demo">
+    <tree-item
+      class="item"
+      item={ props.treeData }
+      make-folder={ makeFolder }
+      add-item={ addItem }
+    ></tree-item>
+  </ul>
+
+  <script>
+    export default {
+      makeFolder(item) {
+        item.children = []
+        this.addItem(item)
+      },
+      addItem(item) {
+        item.children.push({
+          name: 'new stuff'
+        })
+      }
+    }
+  </script>
+</app>

@@ -1,0 +1,53 @@
+<tree-item>
+  <li>
+    <div
+      class={ isFolder() ? bold : '' }
+      onclick={ toggle }
+      ondblclick={ makeFolder }>
+      { state.item.name }
+      <span if={ isFolder() }>[{ state.isOpen ? '-' : '+' }]</span>
+    </div>
+    <ul if={ isFolder() && state.isOpen }>
+      <tree-item
+        class="item"
+        each={ (child, index) in state.item.children }
+        key={ index }
+        item={ child }
+        make-folder={ props.makeFolder }
+        add-item={ props.addItem }
+      ></tree-item>
+      <li class="add" onclick={ addItem }>+</li>
+    </ul>
+  </li>
+
+  <script>
+    export default {
+      onBeforeMount(props, state) {
+        state.item = props.item
+        state.isOpen = false
+
+      },
+      makeFolder() {
+        if (!this.isFolder()) {
+          this.props.makeFolder(this.state.item)
+          this.state.isOpen = true
+          this.update()
+        }
+      },
+      addItem() {
+        this.props.addItem(this.state.item)
+        this.update()
+      },
+      isFolder() {
+        return this.state.item.children &&
+          this.state.item.children.length
+      },
+      toggle() {
+        if (this.isFolder()) {
+          this.state.isOpen = !this.state.isOpen
+          this.update()
+        }
+      }
+    }
+  </script>
+</tree-item>
