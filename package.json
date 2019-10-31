@@ -6,7 +6,8 @@
   "scripts": {
     "modal": "http-server ./modal -o",
     "github": "http-server ./github -o",
-    "tree": "http-server ./tree-view -o"
+    "tree": "http-server ./tree-view -o",
+    "bheader": "http-server ./bounds-header -o"
   },
   "repository": {
     "type": "git",

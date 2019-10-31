@@ -1,0 +1,24 @@
+<app>
+  <h2>{ props.title }</h2>
+  <div id="app">
+    <draggable-header>
+      <div slot="header" class="header">
+        <h1>Elastic Draggable SVG Header</h1>
+        <p>with <a href="http://riot.js.org">Riot.js</a> + <a href="http://dynamicsjs.com">dynamics.js</a></p>
+      </div>
+      <div slot="content" class="content">
+        <p>Note this is just an effect demo - there are of course many additional details if you want to use this in production, e.g. handling responsive sizes, reload threshold and content scrolling. Those are out of scope for this quick little hack. However, the idea is that you can hide them as internal details of a Vue.js component and expose a simple Web-Component-like interface.</p>
+      </div>
+    </draggable-header>
+  </div>
+
+  <script>
+    export default {
+      state: {
+        commits: null
+      },
+      onBeforeMount() {
+      }
+    }
+  </script>
+</app>

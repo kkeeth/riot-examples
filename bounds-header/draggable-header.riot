@@ -1,0 +1,65 @@
+<draggable-header>
+  <div class="draggable-header"
+    onmousedown={ startDrag } ontouchstart= { startDrag }
+    onmousemove={ onDrag } ontouchmove={ onDrag }
+    onmouseup={ stopDrag } ontouchend={ stopDrag } onmouseleave={ stopDrag }>
+    <svg class="bg" width="320" height="560">
+      <path d={ headerPath() } fill="#ED1846"></path>
+    </svg>
+      <slot name="header" />
+      <slot name="content" />
+  </div>
+
+  <script>
+    export default {
+      state: {
+        dragging: false,
+        c: { x: 160, y:160 },
+        start: { x: 0, y: 0 }
+      },
+      headerPath() {
+        return 'M0,0 L320,0 320,160' +
+          'Q' + this.state.c.x + ',' + this.state.c.y +
+          ' 0,160'
+      },
+      contentPosition() {
+        const dy = this.state.c.y - 160
+        const dampen = dy > 0 ? 2 : 4
+        return {
+          transform: 'translate3d(0,' + dy / dampen + 'px,0)'
+        }
+      },
+      startDrag(e) {
+        e.preventDefault()
+        e = e.changedTouches ? e.changedTouches[0] : e
+        this.state.dragging = true
+        this.state.start.x = e.pageX
+        this.state.start.y = e.pageY
+      },
+      onDrag(e) {
+        e.preventDefault()
+        e = e.changedTouches ? e.changedTouches[0] : e
+        if (this.state.dragging) {
+          this.state.c.x = 160 + (e.pageX - this.state.start.x)
+          // dampen vertical drag by a factor
+          var dy = e.pageY - this.state.start.y
+          var dampen = dy > 0 ? 1.5 : 4
+          this.state.c.y = 160 + dy / dampen
+        }
+      },
+      stopDrag() {
+        if (this.state.dragging) {
+          this.state.dragging = false
+          dynamics.animate(this.state.c, {
+            x: 160,
+            y: 160
+          }, {
+            type: dynamics.spring,
+            duration: 700,
+            friction: 280
+          })
+        }
+      }
+    }
+  </script>
+</draggable-header>
