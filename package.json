@@ -7,7 +7,8 @@
     "modal": "http-server ./modal -o",
     "github": "http-server ./github -o",
     "tree": "http-server ./tree-view -o",
-    "bheader": "http-server ./bounds-header -o"
+    "bheader": "http-server ./bounds-header -o",
+    "radar": "http-server ./radar-chart -o"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,31 @@
+<polygraph>
+  <g>
+    <polygon points={ points() }></polygon>
+    <circle cx="100" cy="100" r="80"></circle>
+    <axis-label
+      each={ (stat, index) in state.stats }
+      stat={ stat }
+      index={ index }
+      total={ state.stats.length }>
+    </axis-label>
+  </g>
+
+  <script>
+    export default {
+      state: {
+        stats: []
+      },
+      onBeforeMount(props, state) {
+        state.stats = props.stats
+      },
+      // a computed property for the polygon's points
+      points() {
+        const total = this.state.stats.length
+        return this.state.stats.map((stat, i) => {
+          const point = valueToPoint(stat.value, i, total)
+          return point.x + ',' + point.y
+        }).join(' ')
+      }
+    }
+  </script>
+</polygraph>

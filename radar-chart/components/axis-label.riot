@@ -1,0 +1,18 @@
+<axis-label>
+  <text x={ state.point.x } y={ state.point.y }>{ props.stat.label }</text>
+
+  <script>
+    export default {
+      state: {
+        point: ''
+      },
+      onBeforeMount(props, state) {
+        state.point = valueToPoint(
+          +props.stat.value + 10,
+          props.index,
+          props.total
+        )
+      }
+    }
+  </script>
+</axis-label>

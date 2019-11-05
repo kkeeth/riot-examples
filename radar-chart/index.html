@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Riot.js Radar Chart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="riot+compiler.min.js"></script>
+    <script src="helper.js"></script>
+  </head>
+  <body>
+    <!-- app -->
+    <app></app>
+
+    <!-- tags -->
+    <script data-src="app.riot" type="riot"></script>
+    <script data-src="components/polygraph.riot" type="riot"></script>
+    <script data-src="components/axis-label.riot" type="riot"></script>
+    <script>
+      riot
+        .compile()
+        .then(() => {
+          riot.mount('app', {
+            title: 'Riot.js Radar Chart',
+            stats: [
+              { label: 'A', value: 100 },
+              { label: 'B', value: 100 },
+              { label: 'C', value: 100 },
+              { label: 'D', value: 100 },
+              { label: 'E', value: 100 },
+              { label: 'F', value: 100 }
+            ]
+          })
+        })
+        .catch(e => {
+          console.error(e)
+        })
+    </script>
+  </body>
+</html>
