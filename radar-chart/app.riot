@@ -6,7 +6,7 @@
     <!-- controls -->
     <div each={ (stat, index) in state.stats }>
       <label>{ stat.label }</label>
-      <input type="range" onchange={ changeValue } min="0" max="100" value={ stat.value }>
+      <input type="range" onchange={ changeValue } min="0" max="100" data-index={ index } value={ stat.value }>
       <span>{ stat.value }</span>
       <button onclick={ remove } class="remove" value={ index }>X</button>
     </div>
@@ -50,6 +50,7 @@
         this.state.newLabel = e.target.value
       },
       changeValue(e) {
+        this.state.stats[e.target.dataset.index].value = e.target.value
         this.update()
       }
     }
