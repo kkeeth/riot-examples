@@ -2,16 +2,30 @@
   <h2>{ props.title }</h2>
   <div id="demo">
     <!-- Use the component -->
-    <svg width="200" height="200" is="polygraph" stats={ state.stats }></svg>
+    <svg width="200"
+         height="200"
+         is="polygraph"
+         stats={ state.stats }></svg>
+
     <!-- controls -->
     <div each={ (stat, index) in state.stats }>
       <label>{ stat.label }</label>
-      <input type="range" onchange={ changeValue } min="0" max="100" data-index={ index } value={ stat.value }>
+      <input type="range"
+             onchange={ changeValue }
+            min="0"
+            max="100"
+            data-index={ index }
+            value={ stat.value }>
       <span>{ stat.value }</span>
       <button onclick={ remove } class="remove" value={ index }>X</button>
     </div>
+
+    <!-- add item -->
     <form id="add">
-      <input type="text" name="newlabel" value={ state.newLabel } oninput={ inputStat }>
+      <input type="text"
+             name="newlabel"
+             value={ state.newLabel }
+             oninput={ inputStat }>
       <button onclick={ add }>Add a Stat</button>
     </form>
     <pre id="raw">{ JSON.stringify(props.stats, null, 3) }</pre>
