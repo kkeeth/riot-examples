@@ -4,11 +4,11 @@
     <!-- Use the component -->
     <svg width="200" height="200" is="polygraph" stats={ state.stats }></svg>
     <!-- controls -->
-    <div each={ stat in state.stats }>
+    <div each={ (stat, index) in state.stats }>
       <label>{ stat.label }</label>
       <input type="range" onchange={ changeValue } min="0" max="100" value={ stat.value }>
       <span>{ stat.value }</span>
-      <button onclick={ remove } value={ stat } class="remove">X</button>
+      <button onclick={ remove } class="remove" value={ index }>X</button>
     </div>
     <form id="add">
       <input type="text" name="newlabel" value={ state.newLabel } oninput={ inputStat }>
@@ -40,11 +40,10 @@
       },
       remove(stat) {
         if (this.state.stats.length > 3) {
-          this.state.stats.splice(this.state.stats.indexOf(stat), 1)
+          this.state.stats.splice(stat.target.value, 1)
         } else {
           alert('Can\'t delete more!')
         }
-        console.log(this.state.stats)
         this.update()
       },
       inputStat(e) {
@@ -52,8 +51,6 @@
       },
       changeValue(e) {
         this.update()
-        console.log(e)
-        console.log(e.target.value)
       }
     }
   </script>
