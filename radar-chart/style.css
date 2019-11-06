@@ -29,3 +29,11 @@ label {
   top: 0;
   left: 300px;
 }
+
+#add {
+  margin-top: 1em;
+}
+
+.remove {
+  margin: 0 4px;
+}
