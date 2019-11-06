@@ -2,12 +2,12 @@
   <g>
     <polygon points={ points() }></polygon>
     <circle cx="100" cy="100" r="80"></circle>
-    <axis-label
-      each={ (stat, index) in state.stats }
-      stat={ stat }
+    <text
+      each={ (stat, index) in props.stats }
       index={ index }
-      total={ state.stats.length }>
-    </axis-label>
+      stat={ stat }
+      total={ state.stats.length }
+      is="text" />
   </g>
 
   <script>
@@ -17,6 +17,9 @@
       },
       onBeforeMount(props, state) {
         state.stats = props.stats
+      },
+      onBeforeUpdate(props, state) {
+        console.log(props.stats)
       },
       // a computed property for the polygon's points
       points() {
