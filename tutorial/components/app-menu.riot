@@ -1,0 +1,24 @@
+<app-menu>
+  <ul>
+    <li each={ item in props.items }>
+      <a href={ item.url }>{ item.title }</a>
+    </li>
+  </ul>
+
+  <style>
+    :host { display: block }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li { display: inline-block }
+    a {
+      color: inherit;
+      display: block;
+      padding: 1.2em;
+      text-decoration: none;
+    }
+    a:hover { background: #eee }
+  </style>
+</app-menu>

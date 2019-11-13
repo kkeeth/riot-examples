@@ -1,0 +1,16 @@
+<app>
+  <app-menu items={ urls } />
+  <app-hero title={ props.title } />
+  <app-links items={ urls } />
+  <app-footer message={ props.footer } />
+
+  <script>
+    export default {
+      urls: [
+        { title: 'GitHub',   url: 'https://github.com/k-kuwahara' },
+        { title: 'Twitter',  url: 'https://twitter.com/kuwahara_jsri' },
+        { title: 'Facebook', url: 'https://www.facebook.com/kiyohito.kuwahara' }
+      ]
+    }
+  </script>
+</app>

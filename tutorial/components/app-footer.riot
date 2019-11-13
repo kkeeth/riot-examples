@@ -1,0 +1,18 @@
+<app-footer> 
+  <p>{ props.message } - { year }</p>
+  
+  <script>
+    export default {
+      year: (new Date()).getFullYear()
+    }
+  </script>
+
+  <style>
+    :host { display: block }
+    p {
+      font-size: 90%;
+      margin: 0;
+      padding: 2em;
+    }
+  </style>
+</app-footer>
