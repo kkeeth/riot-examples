@@ -1,6 +1,6 @@
 # Riot.js Examples
 
-This repo is recreated with [riotjs](https://riot.js.org/), referring to these examples.
+This repo is recreated some [vuejs examples](https://jp.vuejs.org/v2/examples/) and some [Svelte tutorial](https://svelte.dev/tutorial/) with [riotjs](https://riot.js.org/), referring to these examples.
 
 note: by using riot4
 
@@ -31,8 +31,8 @@ $ npm run modal
 
 # License
 
-[MIT License](https://github.com/k-kuwahara/riot-examples/blob/master/LICENSE)
+[MIT License](https://github.com/kkeeth/riot-examples/blob/master/LICENSE)
 
 # Others
 
-Please write a new [issues](https://github.com/k-kuwahara/riot-examples/issues)! Please send me [PRs](https://github.com/k-kuwahara/riot-examples/pulls)!
+Please write a new [issues](https://github.com/kkeeth/riot-examples/issues)! Please send me [PRs](https://github.com/kkeeth/riot-examples/pulls)!
