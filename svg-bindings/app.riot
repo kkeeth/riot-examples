@@ -1,0 +1,64 @@
+<app>
+  <h2>{ props.title }</h2>
+  <canvas
+    id="logo"
+    width=32
+    height=32
+  ></canvas>
+
+  <script>
+    let canvas, ctx
+    export default {
+      state: {
+        frame: null,
+      },
+      onMounted() {
+        canvas = document.getElementById('logo')
+        ctx = canvas.getContext('2d')
+        this.loop()
+      },
+      onUnmounted() {
+        cancelAnimationFrame(this.state.frame)
+      },
+      loop() {
+        this.state.frame = requestAnimationFrame(this.loop)
+
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+
+        for (let p = 0; p < imageData.data.length; p += 4) {
+          const i = p / 4
+          const x = i % canvas.width
+          const y = i / canvas.height >>> 0
+
+          const t = window.performance.now()
+
+          const r = 64 + (128 * x / canvas.width) + (64 * Math.sin(t / 1000))
+          const g = 64 + (128 * y / canvas.height) + (64 * Math.cos(t / 1000))
+          const b = 128
+
+          imageData.data[p + 0] = r
+          imageData.data[p + 1] = g
+          imageData.data[p + 2] = b
+          imageData.data[p + 3] = 255
+        }
+
+        ctx.putImageData(imageData, 0, 0)
+        this.update()
+      }
+    }
+  </script>
+
+  <style>
+    h2 {
+      color: #666;
+      font-family: Futura;
+      font-size: 2rem;
+    }
+    canvas {
+      width: 50%;
+      background-color: #666;
+      -webkit-mask: url(riot-logo.svg) 50% 50% no-repeat;
+      mask: url(riot-logo.svg) 50% 50% no-repeat;
+    }
+  </style>
+</app>
