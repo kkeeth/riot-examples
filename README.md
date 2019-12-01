@@ -25,7 +25,9 @@ $ npm run modal
     "github": "http-server ./github -o",
     "tree": "http-server ./tree-view -o",
     "bheader": "http-server ./bounds-header -o",
-    "radar": "http-server ./radar-chart -o"
+    "radar": "http-server ./radar-chart -o",
+    "tutorial": "http-server ./tutorial -o",
+    "svg": "http-server ./svg-binding -o"
   }
 ```
 
