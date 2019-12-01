@@ -27,7 +27,7 @@ $ npm run modal
     "bheader": "http-server ./bounds-header -o",
     "radar": "http-server ./radar-chart -o",
     "tutorial": "http-server ./tutorial -o",
-    "svg": "http-server ./svg-binding -o"
+    "svg": "http-server ./svg-bindings -o"
   }
 ```
 
