@@ -1,11 +1,16 @@
 <app>
-  <app-menu items={ urls } />
+  <app-menu items={ menus } />
   <app-hero title={ props.title } />
   <app-links items={ urls } />
   <app-footer message={ props.footer } />
 
   <script>
     export default {
+      menus: [
+        { title: 'menu1', url: '#' },
+        { title: 'menu2', url: '#' },
+        { title: 'menu3', url: '#' }
+      ],
       urls: [
         { title: 'GitHub',   url: 'https://github.com/k-kuwahara' },
         { title: 'Twitter',  url: 'https://twitter.com/kuwahara_jsri' },
