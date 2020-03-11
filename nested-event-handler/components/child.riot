@@ -1,0 +1,11 @@
+<child>
+  <button type="button" onclick={handleClick}>click me!!</button>
+
+  <script>
+    export default {
+      handleClick() {
+        this.props.alertMe(this.props.me)
+      }
+    }
+  </script>
+</child>

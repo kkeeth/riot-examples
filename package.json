@@ -11,7 +11,8 @@
     "radar": "http-server ./radar-chart -o",
     "tutorial": "http-server ./tutorial -o",
     "svg": "http-server ./svg-bindings -o",
-    "plunker": "http-server ./plunker-template -o"
+    "plunker": "http-server ./plunker-template -o",
+    "event-handler": "http-server ./nested-event-handler -o"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,33 @@
+<app>
+  <div class="app-header">
+    <img src="https://riot.js.org/img/logo/riot-logo.svg" alt="riot logo" class="logo">
+  </div>
+  <h1>{ props.message }</h1>
+
+  <div class="buttons">
+    <ul>
+      <li>Button A: <child me="John" alertMe={handleClick} /></li>
+      <li>Button B: <child me="Nancy" alertMe={handleClick} /></li>
+    </ul>
+  </buttons>
+
+  <script>
+    export default {
+      handleClick(name) {
+        alert(`Hi, I'm ${name}!!`)
+      }
+    }
+  </script>
+
+  <style>
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      list-style: none;
+    }
+    li:last-child {
+      margin-top: 20px;
+    }
+  </style>
+</app>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Riot.js Tutorial</title>
+    <link rel="stylesheet" href="lib/style.css">
+    <script src="lib/riot+compiler.min.js"></script>
+  </head>
+  <body>
+    <app></app>
+
+    <script data-src="components/app.riot" type="riot"></script>
+    <script data-src="components/child.riot" type="riot"></script>
+    <script>
+      riot
+        .compile()
+        .then(() => {
+          riot.mount('app', {
+            message: 'Hello Riot.js!!',
+          })
+        })
+        .catch(e => {
+          console.error(e)
+        })
+    </script>
+  </body>
+</html>
