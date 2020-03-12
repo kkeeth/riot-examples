@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Riot.js Tutorial</title>
+    <link rel="stylesheet" href="lib/style.css">
+    <script src="lib/riot+compiler.min.js"></script>
+  </head>
+  <body>
+    <todo></todo>
+
+    <script data-src="components/todo.riot" type="riot"></script>
+    <script>
+      riot
+        .compile()
+        .then(() => {
+          riot.mount('todo', {
+            message: 'TODO App',
+            todoList: [
+              { id: 1, title: 'task1', done: false },
+              { id: 2, title: 'task2', done: true },
+              { id: 3, title: 'task3', done: false },
+            ]
+          })
+        })
+        .catch(e => {
+          console.error(e)
+        })
+    </script>
+  </body>
+</html>

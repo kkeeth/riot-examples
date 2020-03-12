@@ -12,7 +12,8 @@
     "tutorial": "http-server ./tutorial -o",
     "svg": "http-server ./svg-bindings -o",
     "plunker": "http-server ./plunker-template -o",
-    "event-handler": "http-server ./nested-event-handler -o"
+    "event-handler": "http-server ./nested-event-handler -o",
+    "todo": "http-server ./todo-app -o"
   },
   "repository": {
     "type": "git",

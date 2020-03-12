@@ -1,0 +1,86 @@
+todo #container {
+  display: block;
+  max-width: 480px;
+  margin: 5% auto;
+  padding: 20px;
+  box-shadow:
+    0 2px 2px 0 rgba(0,0,0,.14),
+    0 3px 1px -2px rgba(0,0,0,.2),
+    0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+todo .app-header {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #999;
+}
+
+todo .logo {
+  height: 36px;
+  margin-bottom: 5px;
+}
+
+todo form input {
+  font-size: 85%;
+  padding: .4em;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+todo ul {
+  padding: 0;
+}
+
+todo ul:hover {
+  cursor: pointer;
+}
+
+todo li {
+  list-style-type: none;
+  padding: .2em 0;
+}
+
+todo li:hover {
+  background-color: #eee;
+}
+
+todo li .completed {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+todo button {
+  background-color: #1FADC5;
+  border: 1px solid #eee;
+  font-size: 75%;
+  color: #fff;
+  padding: .4em 1.2em;
+  border-radius: 2em;
+  cursor: pointer;
+  margin: 0 .5rem;
+  outline: none;
+}
+
+todo button:disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: default;
+}
+
+todo button.danger {
+  background-color: #fff;
+  color: #CB2431;
+  margin-left: .6rem;
+}
+
+todo button.danger:hover {
+  background-color: #CB2431;
+  color: #fff;
+}
+
+todo button.danger:disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: default;
+}
+
