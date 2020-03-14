@@ -1,0 +1,16 @@
+<button-b>
+  <button type="button" onclick={handleClick}>click me!!</button>
+
+  <script>
+    export default {
+      onBeforeMount(props) {
+        props.observable.on('click john', (name) => {
+          alert(`Hello ${name}!!`)
+        })
+      },
+      handleClick() {
+        this.props.observable.trigger('click nancy', 'Nancy')
+      }
+    }
+  </script>
+</button-b>

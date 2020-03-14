@@ -7,18 +7,21 @@
     <title>Riot.js Tutorial</title>
     <link rel="stylesheet" href="lib/style.css">
     <script src="lib/riot+compiler.min.js"></script>
+    <script src="lib/observable.js"></script>
   </head>
   <body>
     <app></app>
 
     <script data-src="components/app.riot" type="riot"></script>
-    <script data-src="components/child.riot" type="riot"></script>
+    <script type="riot" src="./components/button-a.riot"></script>
+    <script type="riot" src="./components/button-b.riot"></script>
+
     <script>
       riot
         .compile()
         .then(() => {
           riot.mount('app', {
-            message: 'Hello Riot.js!!',
+            message: 'Hello Riot.js!!'
           })
         })
         .catch(e => {

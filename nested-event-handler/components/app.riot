@@ -4,17 +4,15 @@
   </div>
   <h1>{ props.message }</h1>
 
-  <div class="buttons">
-    <ul>
-      <li>Button A: <child me="John" alertMe={handleClick} /></li>
-      <li>Button B: <child me="Nancy" alertMe={handleClick} /></li>
-    </ul>
-  </div>
+  <ul>
+    <li>Button John: <button-a observable={obs} /></li>
+    <li>Button Nancy: <button-b observable={obs} /></li>
+  </ul>
 
   <script>
     export default {
-      handleClick(name) {
-        alert(`Hi, I'm ${name}!!`)
+      onBeforeMount(props) {
+        this.obs = observable()
       }
     }
   </script>
