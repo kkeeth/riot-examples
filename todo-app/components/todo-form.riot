@@ -22,12 +22,6 @@
         this.isInput = false
         this.hasDoneTodo = props.hasDoneTodo
       },
-      onMounted(props) {
-        props.observable.on('toggle todo', (flg) => {
-          this.hasDoneTodo = flg
-        })
-        this.update()
-      },
       onBeforeUpdate(props) {
         this.hasDoneTodo = props.hasDoneTodo
       },

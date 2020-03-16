@@ -1,0 +1,35 @@
+<todo-list>
+    <h4>todo list</h4>
+    <ul>
+      <li each={ todo in props.todoList } key={ todo.id }>
+        <label class={ todo.done ? 'completed' : null }>
+          <input
+            type="checkbox"
+            checked={ todo.done }
+            onclick={ () => toggle(todo) }
+          />
+          { todo.title }
+        </label>
+        <button class="danger" onclick={ () => deleteTodo(todo)} >
+          delete
+        </button>
+      </li>
+    </ul>
+    <p if={ props.todoList.length === 0 }>No Todos</p>
+
+    <script>
+      export default {
+        toggle(todo) {
+          todo.done = !todo.done
+          this.props.observable.trigger('toggle todo', this.props.todoList)
+        },
+        deleteTodo(todo) {
+          if (window.confirm('本当に削除してもよろしいですか？')) {
+            const filteredTodoList
+              = this.props.todoList.filter(item => item.id !== todo.id)
+            this.props.observable.trigger('delete todo', filteredTodoList)
+          }
+        }
+      }
+    </script>
+</todo-list>

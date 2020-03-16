@@ -11,24 +11,7 @@
       nextId={state.nextId}
       hasDoneTodo={state.hasDoneTodo}
     />
-
-    <h4>todo list</h4>
-    <ul>
-      <li each={ todo in state.todoList } key={ todo.id }>
-        <label class={ todo.done ? 'completed' : null }>
-          <input
-            type="checkbox"
-            checked={ todo.done }
-            onclick={ () => toggle(todo) }
-          />
-          { todo.title }
-        </label>
-        <button class="danger" onclick={ () => deleteTodo(todo)} >
-          delete
-        </button>
-      </li>
-    </ul>
-    <p if={ state.todoList.length === 0 }>No Todos</p>
+    <todo-list observable={obs} todoList={state.todoList} />
   </div>
 
   <script>
@@ -64,26 +47,22 @@
           this.state.hasDoneTodo = false
           this.update()
         })
-      },
-      toggle(todo) {
-        todo.done = !todo.done
-        this.updateHasDoneTodo()
-        this.trigger('toggle todo', this.state.hasDoneTodo)
-        this.update()
+        this.on('delete todo', (filteredTodoList) => {
+          this.state.todoList = filteredTodoList
+          this.updateHasDoneTodo()
+          this.update()
+        })
+        this.on('toggle todo', (updatedList) => {
+          this.state.todoList = updatedList
+          this.updateHasDoneTodo()
+          this.update()
+        })
       },
       updateHasDoneTodo() {
         this.state.hasDoneTodo
             = this.state.todoList.filter(item => item.done === true).length > 0
               ? true
               : false
-      },
-      deleteTodo(todo) {
-        if (window.confirm('本当に削除してもよろしいですか？')) {
-          this.state.todoList
-            = this.state.todoList.filter(item => item.id !== todo.id)
-          this.updateHasDoneTodo()
-          this.update()
-        }
       }
     }
   </script>
