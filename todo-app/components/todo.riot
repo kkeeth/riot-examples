@@ -22,9 +22,16 @@
         nextId: 1
       },
       onBeforeMount(props, state) {
-        state.todoList = props.todoList
-        state.nextId = props.nextId
-        this.updateHasDoneTodo()
+        const beforeTodoState = JSON.parse(localStorage.getItem('todo state'))
+        if (beforeTodoState !== null) {
+          state.todoList = beforeTodoState.todoList
+          state.nextId = beforeTodoState.nextId
+          state.hasDoneTodo = beforeTodoState.hasDoneTodo
+        } else {
+          state.todoList = props.todoList
+          state.nextId = props.nextId
+          this.updateHasDoneTodo()
+        }
         this.obs = observable(this)
       },
       onMounted() {
@@ -57,6 +64,9 @@
           this.updateHasDoneTodo()
           this.update()
         })
+      },
+      onUpdated(props, state) {
+        localStorage.setItem('todo state', JSON.stringify(state))
       },
       updateHasDoneTodo() {
         this.state.hasDoneTodo
