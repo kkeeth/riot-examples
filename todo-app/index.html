@@ -7,11 +7,13 @@
     <title>Riot.js Tutorial</title>
     <link rel="stylesheet" href="lib/style.css">
     <script src="lib/riot+compiler.min.js"></script>
+    <script src="lib/observable.js"></script>
   </head>
   <body>
     <todo></todo>
 
     <script data-src="components/todo.riot" type="riot"></script>
+    <script data-src="components/todo-form.riot" type="riot"></script>
     <script>
       riot
         .compile()
@@ -22,7 +24,8 @@
               { id: 1, title: 'task1', done: false },
               { id: 2, title: 'task2', done: true },
               { id: 3, title: 'task3', done: false },
-            ]
+            ],
+            nextId: 4
           })
         })
         .catch(e => {

@@ -1,0 +1,57 @@
+<todo-form>
+  <form onsubmit={ addTodo }>
+    <input
+      name="todo"
+      value=""
+      placeholder="please input task"
+      onkeyup={ input } />
+    <button disabled={ !isInput }>
+      Add #{ props.nextId }
+    </button>
+    <button
+      class="danger"
+      disabled={ !hasDoneTodo }
+      onclick={ deleteDoneTodos }
+    >
+      delete done
+    </button>
+  </form>
+  <script>
+    export default {
+      onBeforeMount(props, state) {
+        this.isInput = false
+        this.hasDoneTodo = props.hasDoneTodo
+      },
+      onMounted(props) {
+        props.observable.on('toggle todo', (flg) => {
+          this.hasDoneTodo = flg
+        })
+        this.update()
+      },
+      onBeforeUpdate(props) {
+        this.hasDoneTodo = props.hasDoneTodo
+      },
+      addTodo(e) {
+        e.preventDefault()
+
+        if (e.target.todo.value) {
+          this.isInput = false
+          this.props.observable.trigger('add todo', {
+            title: e.target.todo.value,
+            done: false
+          })
+          e.target.todo.value = ""
+        }
+      },
+      input(e) {
+        this.isInput = e.target.value
+        this.update()
+      },
+      deleteDoneTodos() {
+        if (window.confirm('本当に全ての todo を削除してもよろしいですか？')) {
+          this.props.observable.trigger('delete done todos')
+        }
+      }
+    }
+  </script>
+</todo-form>

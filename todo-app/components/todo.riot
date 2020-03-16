@@ -2,29 +2,17 @@
   <div class="app-header">
     <img src="https://riot.js.org/img/logo/riot-logo.svg" alt="riot logo" class="logo">
   </div>
+
   <div id="container">
     <h1>{ props.message }</h1>
 
-    <form onsubmit={ addTask }>
-      <input
-        name="todo"
-        value=""
-        oninput={ input }
-        placeholder="please input task" />
-      <button disabled={ !state.isInput }>
-        Add #{ state.todoList.length + 1 }
-      </button>
-      <button
-        class="danger"
-        disabled={ !state.hasDoneTodo }
-        onclick={ deleteDoneTasks }
-      >
-        delete completed
-      </button>
-    </form>
+    <todo-form
+      observable={obs}
+      nextId={state.nextId}
+      hasDoneTodo={state.hasDoneTodo}
+    />
 
-
-    <h4>todo list</ht>
+    <h4>todo list</h4>
     <ul>
       <li each={ todo in state.todoList } key={ todo.id }>
         <label class={ todo.done ? 'completed' : null }>
@@ -35,73 +23,65 @@
           />
           { todo.title }
         </label>
-        <button class="danger" onclick={ () => deleteTask(todo) }>
+        <button class="danger" onclick={ () => deleteTodo(todo)} >
           delete
         </button>
       </li>
     </ul>
+    <p if={ state.todoList.length === 0 }>No Todos</p>
   </div>
 
   <script>
     export default {
       state: {
         todoList: [],
-        isInput: false,
-        hasDoneTodo: false
+        hasDoneTodo: false,
+        nextId: 1
       },
       onBeforeMount(props, state) {
         state.todoList = props.todoList
+        state.nextId = props.nextId
         this.updateHasDoneTodo()
+        this.obs = observable(this)
       },
-      addTask(e) {
-        e.preventDefault()
-        if (e.target.todo.value) {
-          this.state.isInput = false
+      onMounted() {
+        this.on('add todo', (newTask) => {
           this.updateHasDoneTodo()
           this.update({
             todoList: [
               ...this.state.todoList,
               {
-                id: this.state.todoList.length + 1,
-                title: e.target.todo.value,
-                done: false
+                id: this.state.nextId,
+                ...newTask
               }
-            ]
+            ],
+            nextId: this.state.nextId + 1
           })
-          e.target.todo.value = ""
-        }
-      },
-      input(e) {
-        this.update({
-          isInput: e.target.value
+        })
+        this.on('delete done todos', () => {
+          this.state.todoList
+            = this.state.todoList.filter(item => item.done !== true)
+          this.state.hasDoneTodo = false
+          this.update()
         })
       },
       toggle(todo) {
         todo.done = !todo.done
         this.updateHasDoneTodo()
+        this.trigger('toggle todo', this.state.hasDoneTodo)
         this.update()
       },
       updateHasDoneTodo() {
-        let doneCount = 0
-        this.state.todoList.forEach((todo) => {
-          if (todo.done) doneCount++
-        })
-        if (doneCount > 0) this.state.hasDoneTodo = true
-        else this.state.hasDoneTodo = false
+        this.state.hasDoneTodo
+            = this.state.todoList.filter(item => item.done === true).length > 0
+              ? true
+              : false
       },
-      deleteTask(todo) {
+      deleteTodo(todo) {
         if (window.confirm('本当に削除してもよろしいですか？')) {
           this.state.todoList
             = this.state.todoList.filter(item => item.id !== todo.id)
           this.updateHasDoneTodo()
-          this.update()
-        }
-      },
-      deleteDoneTasks() {
-        if (window.confirm('本当に全ての todo を削除してもよろしいですか？')) {
-          this.state.todoList
-            = this.state.todoList.filter(item => item.done !== true)
-          this.state.hasDoneTodo = false
           this.update()
         }
       }
