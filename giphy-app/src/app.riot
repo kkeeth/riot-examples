@@ -1,11 +1,21 @@
 <app>
   <div class="app-header">
-    <img src="https://riot.js.org/img/logo/riot-logo.svg" alt="riot logo" class="logo">
+    <div class="header-left">
+      <img src="https://riot.js.org/img/logo/square.svg" alt="riot logo" class="logo">
+    </div>
+    <div class="header-right">
+      <h1>{ props.message }</h1>
+      <search></search>
+    </div>
   </div>
-  <h1>{ props.message }</h1>
 
   <script>
+    import Search from './components/search.riot'
+
     export default {
+      components: {
+        Search
+      },
       onBeforeMount(props, state) {
         // any processing
       }
