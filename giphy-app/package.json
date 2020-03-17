@@ -1,0 +1,25 @@
+{
+  "name": "giphy-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html --out-dir=dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "kkeeth",
+    "email": "<zensin0082@gmail.com>"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@riotjs/hot-reload": "^4.0.0",
+    "@riotjs/parcel-plugin-riot": "^4.0.1",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "riot": "^4.11.0"
+  }
+}
