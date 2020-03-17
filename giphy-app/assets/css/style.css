@@ -1,0 +1,39 @@
+body {
+  padding: 1rem 2rem;
+  font-family: Futura, Josefin Sans, sans-serif, Helvetica;
+  background-color: #EFEFEF;
+  max-width: 80%;
+}
+
+app .app-header {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #999;
+}
+app .app-header .logo {
+  margin-bottom: 5px;
+}
+
+app .app-header .header-left {
+  width: 20%;
+}
+
+app .app-header .header-right {
+  margin-left: 1.5rem;
+  width: 100%;
+}
+app .app-header h1 {
+  font-size: 3rem;
+  margin: 0 auto 15px;
+}
+
+@media (max-width: 375px) {
+  app .app-header h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+  app .app-header .logo {
+    width: 70px;
+    margin-top: 5px;
+  }
+}
