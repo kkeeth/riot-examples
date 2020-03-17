@@ -1,11 +1,21 @@
+require('dotenv').config()
 const searchGifs = (query) => {
   // API key
-  const _key = "fPHvsGmGLgfrBlLD2i7jEhcIRuk7UtPf"
-
+  const _key = process.env.API_KEY
+  // base URL
+  const _baseUrl = "https://api.giphy.com/v1/gifs/search"
   // API request URL
-  const _baseUrl = `https://api.giphy.com/v1/gifs/search?api_key=${_key}&q=${query}&limit=25&offset=0&rating=G`
+  const _reqUrl = `${_baseUrl}?api_key=${_key}&q=${query}&&rating=G`
 
-  console.log(query)
+  fetch(_reqUrl)
+    .then((res) => {
+      return res.status === 200
+       ? res.json()
+       : null
+    })
+    .then((data) => {
+      console.log(data)
+    })
 }
 
 export default searchGifs
