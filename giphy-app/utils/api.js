@@ -1,20 +1,21 @@
-require('dotenv').config()
+import axios from 'axios'
+import dotenv from 'dotenv'
+dotenv.config()
 const searchGifs = (query) => {
   // API key
-  const _key = process.env.API_KEY
+  const key = process.env.API_KEY
   // base URL
-  const _baseUrl = "https://api.giphy.com/v1/gifs/search"
+  const baseUrl = "https://api.giphy.com/v1/gifs/search"
+  // limit
+  const limit = 30
   // API request URL
-  const _reqUrl = `${_baseUrl}?api_key=${_key}&q=${query}&&rating=G`
+  const reqUrl = `${baseUrl}?api_key=${key}&q=${query}&limit=${limit}rating=G`
+  // const jsonUrl = "http://localhost:1234/assets/response.json"
 
-  fetch(_reqUrl)
-    .then((res) => {
-      return res.status === 200
-       ? res.json()
-       : null
-    })
-    .then((data) => {
-      console.log(data)
+  return axios
+    .get(reqUrl)
+    .then(({ data: res }) => {
+      return res.data
     })
 }
 

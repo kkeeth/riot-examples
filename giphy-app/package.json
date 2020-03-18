@@ -20,6 +20,8 @@
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
+    "@riotjs/observable": "^4.0.4",
+    "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "riot": "^4.11.0"
   }

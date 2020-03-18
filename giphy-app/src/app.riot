@@ -5,19 +5,20 @@
     </div>
     <div class="header-right">
       <h1>{ props.message }</h1>
-      <search></search>
+      <search observable={obs} />
     </div>
   </div>
 
   <script>
     import Search from './components/search.riot'
+    import observable from '@riotjs/observable'
 
     export default {
       components: {
         Search
       },
       onBeforeMount(props, state) {
-        // any processing
+        this.obs = observable()
       }
     }
   </script>

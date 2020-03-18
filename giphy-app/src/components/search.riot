@@ -15,6 +15,9 @@
         e.preventDefault()
 
         searchGifs(e.target.search.value)
+          .then(res => {
+            this.props.observable.trigger('get json', response)
+          })
       }
     }
   </script>
