@@ -17,6 +17,9 @@ const searchGifs = (query) => {
     .then(({ data: res }) => {
       return res.data
     })
+    .catch(e => {
+      return e
+    })
 }
 
 export default searchGifs

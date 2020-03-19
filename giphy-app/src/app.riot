@@ -8,14 +8,19 @@
       <search observable={obs} />
     </div>
   </div>
+  <div class="app-body">
+    <result observable={obs} />
+  </div>
 
   <script>
     import Search from './components/search.riot'
+    import Result from './components/result.riot'
     import observable from '@riotjs/observable'
 
     export default {
       components: {
-        Search
+        Search,
+        Result
       },
       onBeforeMount(props, state) {
         this.obs = observable()
