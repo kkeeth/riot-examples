@@ -1,0 +1,26 @@
+<error-message>
+  <p class="message">{ message }</p>
+
+  <script>
+    const serverError = '予期せぬエラーが発生しました。時間をおいて再度お試しください。',
+          validationError = '画像名を入力してください。'
+
+    export default {
+      onBeforeUpdate(props) {
+        if (props.status === 500) {
+          this.message = serverError
+        } else if (props.status === 400) {
+          this.message = validationError
+        } else {
+          this.message = ''
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .message {
+      color: #F03030;
+    }
+  </style>
+</error-message>

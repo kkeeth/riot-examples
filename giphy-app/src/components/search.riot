@@ -1,27 +1,51 @@
 <search>
-
   <form onsubmit={ search }>
     <input placeholder="Search Giphys" name="search">
   </form>
+  <error-message status={ httpStatus } />
 
   <script>
+    import ErrorMessage from './error-message.riot'
     import searchGifs from '../../utils/api'
 
     export default {
+      components: {
+        ErrorMessage
+      },
+      onBeforeMount() {
+        this.httpStatus = 100
+      },
       onMounted() {
         this.$('input').focus()
       },
       search(e) {
         e.preventDefault()
+        if (e.target.search.value === '') {
+          this.httpStatus = 400
+          this.update()
+          return
+        }
         const obs = this.props.observable
 
         obs.trigger('start searching')
 
         searchGifs(e.target.search.value)
           .then(response => {
-            this.$('input').value = ""
+            this.clearText(e.target.search)
+            this.status = 200
             obs.trigger('show gifs', response)
           })
+          .catch(e => {
+            console.log(e)
+            this.httpStatus = 500
+          })
+          .then(() => {
+            this.clearText(e.target.search)
+            this.update()
+          })
+      },
+      clearText(target) {
+        target.value = ''
       }
     }
   </script>
