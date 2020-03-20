@@ -31,8 +31,7 @@
 
         searchGifs(e.target.search.value)
           .then(response => {
-            this.clearText(e.target.search)
-            this.status = 200
+            this.httpStatus = 200
             obs.trigger('show gifs', response)
           })
           .catch(e => {
