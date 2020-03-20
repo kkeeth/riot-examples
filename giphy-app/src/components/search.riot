@@ -13,11 +13,14 @@
       },
       search(e) {
         e.preventDefault()
+        const obs = this.props.observable
+
+        obs.trigger('start searching')
 
         searchGifs(e.target.search.value)
           .then(response => {
             this.$('input').value = ""
-            this.props.observable.trigger('show gifs', response)
+            obs.trigger('show gifs', response)
           })
       }
     }

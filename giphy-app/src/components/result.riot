@@ -1,5 +1,6 @@
 <result>
   <h2>Search Results</h2>
+  <Spinner if={ isSearching } />
   <ul>
     <li each={ gif in gifsJson } key={ gif.id }>
       <img src={ gif.images.fixed_height.url } alt={ gif.title } />
@@ -7,12 +8,24 @@
   </ul>
 
   <script>
+    import Spinner from './spinner.riot'
+
     export default {
+      components: {
+        Spinner
+      },
       onMounted(props) {
-        props.observable.on('show gifs', response => {
+        const obs = props.observable
+        obs.on('start searching', () => {
+          this.isSearching = true
+        })
+        obs.on('show gifs', response => {
           this.gifsJson = response
           this.update()
         })
+      },
+      onBeforeUpdate() {
+        this.isSearching = false
       }
     }
   </script>
