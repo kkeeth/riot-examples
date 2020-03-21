@@ -2,7 +2,6 @@ body {
   padding: 1rem 2rem;
   font-family: Futura, Josefin Sans, sans-serif, Helvetica;
   background-color: #EFEFEF;
-  max-width: 80%;
 }
 
 #app .app-header {
