@@ -2,15 +2,28 @@
   <div class="app-header">
     <img src="https://riot.js.org/img/logo/riot-logo.svg" alt="riot logo" class="logo">
   </div>
-  <h1>{ props.message }</h1>
+  <h1>{ props.title }</h1>
+  <h2>{ props.subTitle }</h2>
+  <child message="This is child👦"/>
+  <div is="child" message="This is child👦"/>
 
   <script>
-    import observable from '@riotjs/observable'
+    import Child from './components/child.riot'
 
     export default {
+      components: {
+        Child
+      },
       onBeforeMount(props, state) {
         // any processing
       }
     }
   </script>
+
+  <style>
+    h2 {
+      color: #008080;
+    }
+  </style>
 </app>
+
