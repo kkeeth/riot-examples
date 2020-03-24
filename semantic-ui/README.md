@@ -1,4 +1,4 @@
-# Riot with Parcel Bundler Template
+# Semantic UI Riot Demo
 
 ## Usage
 

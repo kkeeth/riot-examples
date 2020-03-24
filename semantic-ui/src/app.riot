@@ -1,0 +1,17 @@
+<app>
+  <div class="app-header">
+    <img src="https://riot.js.org/img/logo/riot-logo.svg" alt="riot logo" class="logo">
+  </div>
+  <h1>{ props.message }</h1>
+  <su-checkbox>Make my profile visible</su-checkbox>
+
+  <script>
+    import observable from '@riotjs/observable'
+
+    export default {
+      onBeforeMount(props, state) {
+        // any processing
+      }
+    }
+  </script>
+</app>
