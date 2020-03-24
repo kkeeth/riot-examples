@@ -1,17 +1,264 @@
 <app>
   <div class="app-header">
     <img src="https://riot.js.org/img/logo/riot-logo.svg" alt="riot logo" class="logo">
+    <h1>{ props.message }</h1>
   </div>
-  <h1>{ props.message }</h1>
-  <su-checkbox>Make my profile visible</su-checkbox>
+  <h3>◯ Checkbox</h3>
+  <ul>
+    <li>
+      <su-checkbox checked="true">Make my profile visible</su-checkbox>
+    </li>
+    <li>
+      <su-checkbox class="slider">
+        Accept terms and conditions
+      </su-checkbox>
+    </li>
+    <li>
+      <su-checkbox class="toggle">
+        Subscribe to weekly newsletter
+      </su-checkbox>
+    </li>
+  </ul>
+
+  <hr />
+
+  <h3>◯ Modal</h3>
+  <su-modal modal="{ modal }" class="large" show="{ state.show }" onhide="{ onHide }">
+    <div class="ui medium image">
+      <img src="/images/avatar2/large/rachel.png" />
+    </div>
+    <div class="description">
+      <div class="ui header">Default Profile Image</div>
+      <p>We've found the following <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your
+        e-mail address.</p>
+      <p>Is it okay to use this photo?</p>
+    </div>
+  </su-modal>
+  <button class="ui button" onclick="{ showModal }">Show modal</button>
+
+  <hr />
+
+  <h3>◯ Progress</h3>
+  <su-progress class="indicating active" name="progress">Funded</su-progress>
+  <div class="ui icon buttons">
+    <div class="decrement ui basic red button icon" onclick={ decrement }>
+      <i class="minus icon"></i>
+    </div>
+    <div class="increment ui basic green button icon" onclick={ increment }>
+      <i class="plus icon"></i>
+    </div>
+  </div>
+
+  <hr />
+
+  <h3>◯ Accordion(no style)</h3>
+  <su-accordionset class="">
+    <su-accordion title="What is a dog?">
+      <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in
+        many households across the world.</p>
+    </su-accordion>
+    <su-accordion title="What kinds of dogs are there?">
+      <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they
+        find to be compatible with their own lifestyle and desires from a companion.</p>
+    </su-accordion>
+    <su-accordion title="How do you acquire a dog?">
+      <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+      <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree
+        and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good
+        home to a dog who may not find one so readily.</p>
+    </su-accordion>
+  </su-accordionset>
+
+  <h3>◯ Accordion(fluid)</h3>
+  <su-accordionset class="fluid styled">
+    <su-accordion title="What is a dog?">
+      <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in
+        many households across the world.</p>
+    </su-accordion>
+    <su-accordion title="What kinds of dogs are there?">
+      <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they
+        find to be compatible with their own lifestyle and desires from a companion.</p>
+    </su-accordion>
+    <su-accordion title="How do you acquire a dog?">
+      <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+      <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree
+        and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good
+        home to a dog who may not find one so readily.</p>
+    </su-accordion>
+  </su-accordionset>
+
+  <h3>◯ Accordion Menu</h3>
+  <su-accordionset class="vertical menu">
+    <div class="item">
+      <su-accordion title="Size">
+        <div class="ui form">
+          <div class="grouped fields">
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="size" value="small">
+                <label>Small</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="size" value="medium">
+                <label>Medium</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="size" value="large">
+                <label>Large</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="size" value="x-large">
+                <label>X-Large</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </su-accordion>
+    </div>
+    <div class="item">
+      <su-accordion title="Colors">
+        <div class="ui form">
+          <div class="grouped fields">
+            <div class="field">
+              <div class="ui checkbox">
+                <input type="checkbox" name="small">
+                <label>Red</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input type="checkbox" name="medium">
+                <label>Orange</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input type="checkbox" name="large">
+                <label>Green</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input type="checkbox" name="x-large">
+                <label>Blue</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </su-accordion>
+    </div>
+  </su-accordionset>
 
   <script>
     import observable from '@riotjs/observable'
 
     export default {
+      modal: {
+        header: 'Select a Photo',
+        buttons: [{
+          text: 'Ok',
+          type: 'primary',
+          icon: 'checkmark'
+        }, {
+          text: 'Cancel'
+        }]
+      },
+      state: {
+        show: false
+      },
+      dropdownItems: [
+        {
+          label: 'Gender',
+          value: null,
+          default: true
+        },
+        {
+          label: 'Male',
+          value: 1
+        },
+        {
+          label: 'Female',
+          value: 2
+        }
+      ],
+      dropdownItemsFluid: [
+        {
+          label: 'Select Friend',
+          value: null,
+          default: true
+        },
+        {
+          label: 'Jenny Hess',
+          image: '/images/avatar/small/jenny.jpg',
+          value: 'jenny'
+        },
+        {
+          label: 'Elliot Fu',
+          image: '/images/avatar/small/elliot.jpg',
+          value: 'elliot'
+        },
+        {
+          label: 'Stevie Feliciano',
+          image: '/images/avatar/small/stevie.jpg',
+          value: 'stevie'
+        },
+        {
+          label: 'Christian',
+          image: '/images/avatar/small/christian.jpg',
+          value: 'christian'
+        },
+        {
+          label: 'Matt',
+          image: '/images/avatar/small/matt.jpg',
+          value: 'matt'
+        },
+        {
+          label: 'Justen Kitsune',
+          image: '/images/avatar/small/justen.jpg',
+          value: 'justen'
+        }
+      ],
       onBeforeMount(props, state) {
         // any processing
+      },
+      showModal() {
+        this.update({ show: true })
+      },
+      onHide() {
+        this.update({ show: false })
+      },
+      decrement(name) {
+        const target = this.$('[name="progress"]')
+        const value = parseInt(target.getAttribute('value'))
+        if (value >= 0) {
+          target.setAttribute('value', value - 10)
+          this.update()
+        }
+      },
+      increment(name) {
+        const target = this.$('[name="progress"]')
+        const value = parseInt(target.getAttribute('value'))
+        if (value <= 100) {
+          target.setAttribute('value', value + 10)
+          this.update()
+        }
       }
     }
   </script>
+
+  <style>
+    ul {
+      padding: 0;
+    }
+    li {
+      list-style: none;
+      margin: 10px;
+    }
+  </style>
 </app>
