@@ -1,8 +1,8 @@
 <app>
   <div class="app-header">
     <img src="https://riot.js.org/img/logo/riot-logo.svg" alt="riot logo" class="logo">
-    <h1>{ props.message }</h1>
   </div>
+  <h1>{ props.message }</h1>
   <h3>◯ Checkbox</h3>
   <ul>
     <li>
@@ -154,6 +154,34 @@
       </su-accordion>
     </div>
   </su-accordionset>
+
+  <hr />
+
+  <h3>○ Tab(inverted)</h3>
+  <su-tabset class="inverted">
+    <su-tab label="Home">Home content</su-tab>
+    <su-tab label="Messages">Messages content</su-tab>
+    <su-tab label="Friends">Friends content</su-tab>
+  </su-tabset>
+  <su-datepicker popup="true" pattern="YYYY/MM/DD"  value="2010-01-01"/>
+
+
+  <h3>○ Tab(colors and inverted)</h3>
+  <su-tabset class="inverted">
+    <su-tab label="red" title-class="red" class="red segment inverted">Red</su-tab>
+    <su-tab label="orange" title-class="orange" class="orange segment inverted">Orange</su-tab>
+    <su-tab label="yellow" title-class="yellow" class="yellow segment inverted">Yellow</su-tab>
+    <su-tab label="olive" title-class="olive" class="olive segment inverted">Olive</su-tab>
+    <su-tab label="green" title-class="green" class="green segment inverted">Green</su-tab>
+    <su-tab label="teal" title-class="teal" class="teal segment inverted">Teal</su-tab>
+    <su-tab label="blue" title-class="blue" class="blue segment inverted">Blue</su-tab>
+    <su-tab label="violet" title-class="violet" class="violet segment inverted">Violet</su-tab>
+    <su-tab label="purple" title-class="purple" class="purple segment inverted">Purple</su-tab>
+    <su-tab label="pink" title-class="pink" class="pink segment inverted">Pink</su-tab>
+    <su-tab label="brown" title-class="brown" class="brown segment inverted">Brown</su-tab>
+    <su-tab label="grey" title-class="grey" class="grey segment inverted">Grey</su-tab>
+  </su-tabset>
+
 
   <script>
     import observable from '@riotjs/observable'

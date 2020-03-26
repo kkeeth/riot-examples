@@ -4,5 +4,5 @@ import 'semantic-ui-riot'
 import App from './app.riot'
 
 component(App)(document.getElementById('app'), {
-  message: 'Hello Riot.js!'
+  message: 'Semantic UI Riot Demo'
 })
