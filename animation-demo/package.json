@@ -21,6 +21,9 @@
   },
   "dependencies": {
     "@riotjs/observable": "^4.0.4",
-    "riot": "^4.11.0"
+    "animejs": "^3.1.0",
+    "animore": "^2.0.3",
+    "riot": "^4.11.0",
+    "sanitize.css": "^11.0.0"
   }
 }

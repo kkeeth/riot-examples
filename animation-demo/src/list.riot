@@ -1,0 +1,88 @@
+<list>
+  <h1>{ props.title }</h1>
+  <ul>
+    <li
+      each={ (item, i) in state.items }
+      key={ item.id }
+    >
+      { `${item.id}: ${item.name}` }
+      <button onclick={ remove } id={ i }>remove</button>
+    </li>
+  </ul>
+
+  <button onclick={ add }>add</button>
+  <button onclick={ reverse }>reverse</button>
+
+  <script>
+    import animore from 'animore'
+    import anime from 'animejs'
+
+    const uid = ((id) => () => id++)(5)
+
+    export default {
+      state: {
+        items: [
+          { name: 'hi', id: 0 },
+          { name: 'there', id: 1 },
+          { name: 'dear', id: 2 },
+          { name: 'riot', id: 3 },
+          { name: 'user', id: 4 }
+        ]
+      },
+      onBeforeUpdate() {
+        this.animations = animore('li', {
+          duration: 500,
+          easing: 'linear'
+        })
+        this.animations.forEach(({ stash }) => stash())
+      },
+      onUpdated() {
+        this.animations.forEach(({ apply }) => apply())
+      },
+      remove(e) {
+        const { items } = this.state
+
+        items.splice(e.target.id, 1)
+        this.update({ items })
+      },
+      add() {
+        const { items } = this.state
+
+        items.push({
+          name: Math.random() > 0.5 ? 'foo' : 'bar',
+          id: uid()
+        })
+        this.update({ items })
+        anime({
+          targets: 'li:last-child',
+          translateX: [200, 0],
+          delay: anime.stagger(100)
+        })
+      },
+      reverse() {
+        this.update({
+          items: this.state.items.reverse()
+        })
+        anime('li', {
+          duration: 300,
+          easing: 'linear'
+        })
+      }
+    }
+  </script>
+
+  <style>
+    .box {
+      position: absolute;
+      font: normal 18px Helvetica, Arial;
+      background: #8CE479;
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+      display: flex;
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</list>
