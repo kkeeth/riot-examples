@@ -815,23 +815,23 @@
     "@parcel/utils" "^1.11.0"
     physical-cpu-count "^2.0.0"
 
-"@riotjs/compiler@^4.7.0":
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/@riotjs/compiler/-/compiler-4.7.0.tgz#cfb6eb258e9cd92de1ffac6485e004940daf3d52"
-  integrity sha512-TrQFQ1G5iDT0+ec2UBrd3NL3OoL/tNbFe5HhkRErNQF+A8j34spkVBQpy0ZdpYZWmWkfWuzq1bqb4dCEHOy+5w==
+"@riotjs/compiler@^4.5.5":
+  version "4.8.2"
+  resolved "https://registry.yarnpkg.com/@riotjs/compiler/-/compiler-4.8.2.tgz#5c8420fef5721d20e68a664de238b0c0dad3dfd7"
+  integrity sha512-h1wfewMR1ZWaYQV8lJFRuabTabrJbLhubJ/0kUN7ZTVAugSPNm8qT65FnX4OsiQBmbwYD3WUJ5qbw6L6fDKMPg==
   dependencies:
-    "@riotjs/parser" "^4.1.2"
+    "@riotjs/parser" "^4.2.1"
     "@riotjs/util" "1.2.0"
-    acorn "^7.1.0"
+    acorn "^7.1.1"
     cssesc "^3.0.0"
     cumpa "^1.0.1"
     curri "^1.0.1"
     dom-nodes "^1.1.3"
-    globals "^12.3.0"
+    globals "^12.4.0"
     recast "^0.18.7"
     source-map "^0.7.3"
 
-"@riotjs/dom-bindings@^4.7.0":
+"@riotjs/dom-bindings@^4.6.2":
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/@riotjs/dom-bindings/-/dom-bindings-4.7.0.tgz#a978c7720de6730ebc26eadcbe0fb53027f123da"
   integrity sha512-b9lwSOPOL9e7CnJbeKuaSPnOKtUcwjOSBn4bWEuKbiz8kvwGzDiVHjhpRtzSoGAue989+jLViFyzcN/sJFIk+g==
@@ -856,15 +856,15 @@
   resolved "https://registry.yarnpkg.com/@riotjs/parcel-plugin-riot/-/parcel-plugin-riot-4.0.1.tgz#d909a641b7f06b0da8a91535ad77ac5a657fcfdf"
   integrity sha512-C66puJcdLCR7YDVp+0o4Kk0t9AmQEAUCKo0zZH7d3dv29G8VSbEwwqkKd47WHR7ZWYwnOo+L5l9af8lYXTGdmg==
 
-"@riotjs/parser@^4.1.2":
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/@riotjs/parser/-/parser-4.1.2.tgz#b51811d37a31e1b2a7a75e185e35747a5c106beb"
-  integrity sha512-uMfTC1UMKqh90HYRPmFzbYUMhmlrPpbuom+t6s1HqBVxFyY2zG7+rspTNClIC6qwCKz+CFVcUX/1Lg0gS5rz4Q==
+"@riotjs/parser@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@riotjs/parser/-/parser-4.2.1.tgz#aac8efe3495890021befef7784711470113f5e1e"
+  integrity sha512-VOqX6Ne7Wt9ziV8GcAE/AARvV92HNiYeeIDzM7tPijduDkWYGKaFYlw+bcwAcg4DM8Pi4sExTceOHxAuqKH3dg==
   dependencies:
     curri "^1.0.1"
     dom-nodes "^1.1.3"
 
-"@riotjs/util@1.2.0", "@riotjs/util@^1.2.0":
+"@riotjs/util@1.2.0", "@riotjs/util@^1.1.0", "@riotjs/util@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@riotjs/util/-/util-1.2.0.tgz#a1fdaaa82e214eeff0b740b2b24600b6dfe62d7d"
   integrity sha512-pdKDR9kTPWKR8rNmIJzFoCJ9efXatpwje/2SgWpBgsLH1dFzLiiggN35Kbt8KtaRSOf/nHsrmd6VDirUj4lTLw==
@@ -897,7 +897,7 @@ acorn@^6.0.1, acorn@^6.0.4:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
   integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
 
-acorn@^7.1.0, acorn@^7.1.1:
+acorn@^7.1.1:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.1.1.tgz#e35668de0b402f359de515c5482a1ab9f89a69bf"
   integrity sha512-add7dgA5ppRPxCFJoAGfMDi7PIBXq1RtGo7BhbLaxwrXPOmw8gq48Y9ozT01hUKy9byMjlR20EJhu5zlkErEkg==
@@ -2423,7 +2423,7 @@ globals@^11.1.0:
   resolved "https://registry.yarnpkg.com/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
   integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
 
-globals@^12.3.0:
+globals@^12.4.0:
   version "12.4.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-12.4.0.tgz#a18813576a41b00a24a97e7f815918c2e19925f8"
   integrity sha512-BWICuzzDvDoH54NHKCseDanAhE3CeDorgDL5MT6LMXXj2WCnd9UC2szdk4AWLfjdgNBCXLUanXYcpBBKOSWGwg==
@@ -4394,14 +4394,14 @@ rimraf@^2.6.2:
   dependencies:
     glob "^7.1.3"
 
-riot@^4.11.0:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/riot/-/riot-4.11.0.tgz#e18518fc533a5e134b98f2e5aedac9005596532c"
-  integrity sha512-6iRPbePBU17TWY0KC0hxXhErGbJMWSmpih3BnO9FalmwT/DDEpXT/0eHQJXDJ6BmHu8q4BKCi09N1vLOOMn/Aw==
+riot@4.8.2:
+  version "4.8.2"
+  resolved "https://registry.yarnpkg.com/riot/-/riot-4.8.2.tgz#6c1cb580a7f83330e711934d3a9b434664c61409"
+  integrity sha512-vpYXyWQIQ/Nzfuq4CaWhPq5vDuWjuNh4EiGvO6/bJau/5ZtKs3EHjEPmA/hMo6hBMsVKOFu65aKUk7ZjDLH3WQ==
   dependencies:
-    "@riotjs/compiler" "^4.7.0"
-    "@riotjs/dom-bindings" "^4.7.0"
-    "@riotjs/util" "^1.2.0"
+    "@riotjs/compiler" "^4.5.5"
+    "@riotjs/dom-bindings" "^4.6.2"
+    "@riotjs/util" "^1.1.0"
     bianco.attr "^1.0.0"
     bianco.query "^1.0.0"
     cumpa "^1.0.1"

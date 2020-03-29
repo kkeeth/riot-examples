@@ -2,11 +2,143 @@
   <div class="app-header">
     <img src="https://riot.js.org/img/logo/riot-logo.svg" alt="riot logo" class="logo">
   </div>
-  <h1>{ props.message }</h1>
-  <h3>◯ Checkbox</h3>
+  <h1>{ props.title }</h1>
+
+  <p>Basic</p>
+  <button class="ui basic button">Default</button>
+  <button class="ui basic button primary">Primary</button>
+  <button class="ui basic button secondary">Secondary</button>
+  <button class="ui basic button positive">Positive</button>
+  <button class="ui basic button negative">Negative</button>
+
+  <hr />
+
+  <p>Fill</p>
+  <button class="ui button">Default</button>
+  <button class="ui button primary">Primary</button>
+  <button class="ui button secondary">Secondary</button>
+  <button class="ui button positive">Positive</button>
+  <button class="ui button negative">Negative</button>
+
+  <hr />
+
+  <p>Colors</p>
+  <button class="ui red button">Red</button>
+  <button class="ui orange button">Orange</button>
+  <button class="ui yellow button">Yellow</button>
+  <button class="ui olive button">Olive</button>
+  <button class="ui green button">Green</button>
+  <button class="ui teal button">Teal</button>
+  <button class="ui blue button">Blue</button>
+  <button class="ui violet button">Violet</button>
+  <button class="ui purple button">Purple</button>
+  <button class="ui pink button">Pink</button>
+  <button class="ui brown button">Brown</button>
+  <button class="ui grey button">Grey</button>
+  <button class="ui black button">Black</button>
+
+  <hr />
+
+  <p>Animated</p>
+  <button class="ui animated button basic violet">
+    <div class="visible content">Next</div>
+    <div class="hidden content">
+      <i class="right arrow icon" />
+    </div>
+  </button>
+  <button class="ui vertical animated button teal">
+    <div class="hidden content">Shop</div>
+    <div class="visible content">
+      <i class="shop icon" />
+    </div>
+  </button>
+  <button class="ui animated fade button secondary">
+    <div class="visible content">Sign-up for a Pro account</div>
+    <div class="hidden content">
+      $12.99 a month
+    </div>
+  </button>
+
+  <hr />
+
+  <p>Labeled</p>
+  <div class="ui labeled button">
+    <button class="ui red button">
+      <i class="heart icon"></i> Like
+    </button>
+    <a class="ui basic red left pointing label">
+      2,048
+    </a>
+  </div>
+  <div class="ui left labeled button">
+    <a class="ui basic label">
+      2,048
+    </a>
+    <button class="ui icon button blue">
+      <i class="fork icon"></i>
+    </button>
+  </div>
+  <button class="ui labeled icon button">
+    <i class="pause icon"></i>
+    Pause
+  </button>
+
+  <hr />
+
+  <p>Group</p>
+  <div class="ui icon buttons">
+    <button class="ui button"><i class="align left icon"></i></button>
+    <button class="ui button"><i class="align center icon"></i></button>
+    <button class="ui button"><i class="align right icon"></i></button>
+    <button class="ui button"><i class="align justify icon"></i></button>
+  </div>
+
+  <hr />
+
+  <p>Status</p>
+  <button class="ui active button">
+    <i class="user icon"></i>
+    Follow
+  </button>
+  <button class="ui disabled button">
+    <i class="user icon"></i>
+    Followed
+  </button>
+  <button class="ui primary loading button">Loading</button>
+  <button class="ui secondary loading basic button">Loading</button>
+  <button class="ui toggle button { isActive && 'active' }" onclick={ handleToggle }>Vote</button>
+  <button class="fluid ui button" style="margin-top: 10px;">Fits container</button>
+
+  <h3>○ Button</h3>
+
+  <hr />
+
+  <h3>◯ Checkbox(multiple)</h3>
+
+  <su-checkbox-group name="checkbox-group" value={ checkboxGroupValue } onchange={ handleChange }>
+    <su-checkbox value="1">Checkbox 1</su-checkbox>
+    <su-checkbox value="2">Checkbox 2</su-checkbox>
+    <su-checkbox value="3">Checkbox 3</su-checkbox>
+  </su-checkbox-group>
+  <div>
+    <button type="button" onclick={ () => checkSelectCheckbox([1,2]) } class="ui button">Check 1,2</button>
+    <button type="button" onclick={ () => checkSelectCheckbox([1,2,3]) } class="ui button">Check all</button>
+    <button type="button" onclick={ () => checkSelectCheckbox([]) } class="ui button">Clear all</button>
+  </div>
+
+  <hr />
+
+  <h3>◯ Checkbox(various)</h3>
   <ul>
     <li>
-      <su-checkbox checked="true">Make my profile visible</su-checkbox>
+      <su-checkbox>
+        Make my profile visible
+      </su-checkbox>
+    </li>
+    <li>
+      <su-checkbox class="disabled">
+        Disabled
+      </su-checkbox>
     </li>
     <li>
       <su-checkbox class="slider">
@@ -14,18 +146,21 @@
       </su-checkbox>
     </li>
     <li>
-      <su-checkbox class="toggle">
+      <su-checkbox class="toggle" onchange={ handleToggle } >
         Subscribe to weekly newsletter
       </su-checkbox>
     </li>
   </ul>
+  <div class="ui message">
+    <p>{ isChecked ? 'on' : 'off' }</p>
+  </div>
 
   <hr />
 
   <h3>◯ Modal</h3>
-  <su-modal modal="{ modal }" class="large" show="{ state.show }" onhide="{ onHide }">
+  <su-modal modal={ modal } class="large" show={ state.show } onhide={ closeModal }>
     <div class="ui medium image">
-      <img src="/images/avatar2/large/rachel.png" />
+      <img src="/assets/img/rachel.png" />
     </div>
     <div class="description">
       <div class="ui header">Default Profile Image</div>
@@ -34,7 +169,7 @@
       <p>Is it okay to use this photo?</p>
     </div>
   </su-modal>
-  <button class="ui button" onclick="{ showModal }">Show modal</button>
+  <button class="ui button teal" onclick={ showModal }>Show modal</button>
 
   <hr />
 
@@ -52,29 +187,20 @@
   <hr />
 
   <h3>◯ Dropdown</h3>
-  <su-dropdown items="{ dropdownItems }"></su-dropdown>
+  <su-dropdown
+    items={ dropdownItems }
+    onselect={ handleSelect }
+    class="fluid"
+    search="true"
+  ></su-dropdown>
+
+  <div class="ui message">
+    <p>{ selectMenu ? selectMenu.label : 'no select' }</p>
+  </div>
 
   <hr />
 
-  <h3>◯ Accordion(no style)</h3>
-  <su-accordionset class="">
-    <su-accordion title="What is a dog?">
-      <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in
-        many households across the world.</p>
-    </su-accordion>
-    <su-accordion title="What kinds of dogs are there?">
-      <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they
-        find to be compatible with their own lifestyle and desires from a companion.</p>
-    </su-accordion>
-    <su-accordion title="How do you acquire a dog?">
-      <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
-      <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree
-        and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good
-        home to a dog who may not find one so readily.</p>
-    </su-accordion>
-  </su-accordionset>
-
-  <h3>◯ Accordion(fluid)</h3>
+  <h3>◯ Accordion</h3>
   <su-accordionset class="fluid styled">
     <su-accordion title="What is a dog?">
       <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in
@@ -168,44 +294,105 @@
     <su-tab label="Messages">Messages content</su-tab>
     <su-tab label="Friends">Friends content</su-tab>
   </su-tabset>
-  <su-datepicker popup="true" pattern="YYYY/MM/DD"  value="2010-01-01"/>
 
+  <hr />
+  <h3>○ Datepicker</h3>
+  <su-datepicker popup="true" pattern="YYYY/MM/DD"  value="" />
 
-  <h3>○ Tab(colors and inverted)</h3>
-  <su-tabset class="inverted">
-    <su-tab label="red" title-class="red" class="red segment inverted">Red</su-tab>
-    <su-tab label="orange" title-class="orange" class="orange segment inverted">Orange</su-tab>
-    <su-tab label="yellow" title-class="yellow" class="yellow segment inverted">Yellow</su-tab>
-    <su-tab label="olive" title-class="olive" class="olive segment inverted">Olive</su-tab>
-    <su-tab label="green" title-class="green" class="green segment inverted">Green</su-tab>
-    <su-tab label="teal" title-class="teal" class="teal segment inverted">Teal</su-tab>
-    <su-tab label="blue" title-class="blue" class="blue segment inverted">Blue</su-tab>
-    <su-tab label="violet" title-class="violet" class="violet segment inverted">Violet</su-tab>
-    <su-tab label="purple" title-class="purple" class="purple segment inverted">Purple</su-tab>
-    <su-tab label="pink" title-class="pink" class="pink segment inverted">Pink</su-tab>
-    <su-tab label="brown" title-class="brown" class="brown segment inverted">Brown</su-tab>
-    <su-tab label="grey" title-class="grey" class="grey segment inverted">Grey</su-tab>
-  </su-tabset>
+  <hr />
+
+  <h3>○ Errors(each forms)</h3>
+  <div class="ui form">
+    <div class="field { errors.address && 'error' }">
+      <label>Address</label>
+      <input type="text" oninput={ handleInput } />
+      <su-validation-error name="address" errors={ errors } />
+    </div>
+    <div class="inline field { errors.agree && 'error' }">
+      <su-checkbox onchange={ handleChangeCheckbox }>I agree to the terms and conditions</su-checkbox>
+      <su-validation-error name="agree" errors={ errors } />
+    </div>
+  </div>
+
+  <hr />
+
+  <h3>○ Errors(combine)</h3>
+  <div class="ui form">
+    <div class="field { errors.address && 'error' }">
+      <label>Address</label>
+      <input type="text" oninput={ handleInput } />
+    </div>
+    <div class="inline field { errors.agree && 'error' }">
+      <su-checkbox onchange={ handleChangeCheckbox }>I agree to the terms and conditions</su-checkbox>
+    </div>
+    <su-validation-error errors={ (errors.address || errors.agree) && errors } />
+  </div>
+
+  <hr />
+
+  <h3>○ Login Form</h3>
+  <div class="ui placeholder segment">
+    <div class="ui two column very relaxed stackable grid">
+      <div class="column">
+        <div class="ui form">
+          <div class="field">
+            <label>Username</label>
+            <div class="ui left icon input">
+              <input type="text" placeholder="Username">
+              <i class="user icon"></i>
+            </div>
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <div class="ui left icon input">
+              <input type="password">
+              <i class="lock icon"></i>
+            </div>
+          </div>
+          <button class="ui blue button submit">Login</button>
+        </div>
+      </div>
+      <div class="middle aligned column">
+        <div class="ui big button">
+          <i class="signup icon"></i>
+          Sign Up
+        </div>
+      </div>
+    </div>
+    <div class="ui vertical divider">
+      Or
+    </div>
+  </div>
 
 
   <script>
     import observable from '@riotjs/observable'
+    const errorMessages = {
+      address: ['The address field is required.'],
+      agree: ['You must agree to the terms and conditions.']
+    }
 
     export default {
       modal: {
         header: 'Select a Photo',
-        buttons: [{
-          text: 'Ok',
-          type: 'primary',
-          icon: 'checkmark'
-        }, {
-          text: 'Cancel'
-        }]
+        buttons: [
+          {
+            text: 'Nope',
+            type: 'secondary'
+          },
+          {
+            text: 'OK',
+            icon: 'checkmark',
+            type: 'primary',
+          },
+        ]
       },
+      isChecked: false,
+      isActive: false,
       state: {
         show: false
       },
-      dropdownItems: [
+      dropdownItemsBk: [
         {
           label: 'Gender',
           value: null,
@@ -218,9 +405,17 @@
         {
           label: 'Female',
           value: 2
+        },
+        {
+          label: 'Trans Gender',
+          value: 3
+        },
+        {
+          label: 'No Select',
+          value: 4
         }
       ],
-      dropdownItemsFluid: [
+      dropdownItems: [
         {
           label: 'Select Friend',
           value: null,
@@ -228,42 +423,46 @@
         },
         {
           label: 'Jenny Hess',
-          image: '/images/avatar/small/jenny.jpg',
+          image: '/assets/img/jenny.jpg',
           value: 'jenny'
         },
         {
           label: 'Elliot Fu',
-          image: '/images/avatar/small/elliot.jpg',
+          image: '/assets/img/elliot.jpg',
           value: 'elliot'
         },
         {
           label: 'Stevie Feliciano',
-          image: '/images/avatar/small/stevie.jpg',
+          image: '/assets/img/stevie.jpg',
           value: 'stevie'
         },
         {
           label: 'Christian',
-          image: '/images/avatar/small/christian.jpg',
+          image: '/assets/img/christian.jpg',
           value: 'christian'
         },
         {
           label: 'Matt',
-          image: '/images/avatar/small/matt.jpg',
+          image: '/assets/img/matt.jpg',
           value: 'matt'
         },
         {
           label: 'Justen Kitsune',
-          image: '/images/avatar/small/justen.jpg',
+          image: '/assets/img/justen.jpg',
           value: 'justen'
         }
       ],
+      errors: {
+        address: '',
+        agree: ''
+      },
       onBeforeMount(props, state) {
         // any processing
       },
       showModal() {
         this.update({ show: true })
       },
-      onHide() {
+      closeModal() {
         this.update({ show: false })
       },
       decrement(name) {
@@ -281,6 +480,43 @@
           target.setAttribute('value', value + 10)
           this.update()
         }
+      },
+      checkSelectCheckbox(value) {
+        if (value.length === 0) {
+          this.$$('input[type="checkbox"]').forEach(item => {
+            item.checked = false
+          })
+        }
+        this.checkboxGroupValue = value
+        this.update()
+      },
+      handleToggle(e) {
+        this.isChecked = e.target.checked
+        this.isActive = !this.isActive
+        this.update()
+      },
+      handleChange(e) {
+        this.update()
+      },
+      handleInput(e) {
+        if (e.target.value.length > 0)
+          this.errors.address = ""
+        else
+          this.errors.address = errorMessages.address
+
+        this.update()
+      },
+      handleChangeCheckbox(e) {
+        if (e.target.checked)
+          this.errors.agree = ""
+        else
+          this.errors.agree = errorMessages.agree
+
+        this.update()
+      },
+      handleSelect(e) {
+        this.selectMenu = e
+        this.update()
       }
     }
   </script>
