@@ -9,30 +9,38 @@
     </nav>
 
     <route path="/:page">
-      <h2>{getPageById(route).title}</h2>
-      <p>{getPageById(route).body}</p>
+      <Food
+        title={ getPageById(route).title }
+        body={ getPageById(route).body }
+        color='#ffcc99'
+      />
     </route>
     <route path="/:page/:detail">
-      <h2>{getPageById(route).title}</h2>
-      <p>{getPageById(route).body}</p>
-      {JSON.stringify(route.params)}
+      <Food
+        title={ getPageById(route).title }
+        body={ getPageById(route).body }
+        color='#ccffff'
+      />
     </route>
     <route path="">
-      <h2>{ pages[0].title }</h2>
-      <p>{ pages[0].body }</p>
+      <Home title={ pages[0].title } body={ pages[0].body } />
     </route>
   </router>
 
   <script>
     import observable from '@riotjs/observable'
     import { Router, Route, setBase, route } from '@riotjs/route'
+    import Home from './components/app-home.riot'
+    import Food from './components/app-food.riot'
 
     // setBase(`${window.location.protocol}//${window.location.host}/`)
 
     export default {
       components: {
         Router,
-        Route
+        Route,
+        Home,
+        Food
       },
       pages: [
         { id: "", title: "Home", body: "Click the link above." },
@@ -44,8 +52,7 @@
         // any processing
       },
       getPageById(route) {
-        const [id] = route.params
-        console.log(id)
+        const id = route.params.join('/')
         return this.pages.find(page => page.id === id) || this.pages[0]
       }
     }
