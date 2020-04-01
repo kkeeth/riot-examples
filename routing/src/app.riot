@@ -1,0 +1,76 @@
+<app>
+  <h1>{ props.title }</h1>
+
+  <router base={base}>
+    <nav>
+      <a each={ page in pages } href="/{ page.id }">
+        { page.title }
+      </a>
+    </nav>
+
+    <route path="/:page">
+      <h2>{getPageById(route).title}</h2>
+      <p>{getPageById(route).body}</p>
+    </route>
+    <route path="/:page/:detail">
+      <h2>{getPageById(route).title}</h2>
+      <p>{getPageById(route).body}</p>
+      {JSON.stringify(route.params)}
+    </route>
+    <route path="">
+      <h2>{ pages[0].title }</h2>
+      <p>{ pages[0].body }</p>
+    </route>
+  </router>
+
+  <script>
+    import observable from '@riotjs/observable'
+    import { Router, Route, setBase, route } from '@riotjs/route'
+
+    // setBase(`${window.location.protocol}//${window.location.host}/`)
+
+    export default {
+      components: {
+        Router,
+        Route
+      },
+      pages: [
+        { id: "", title: "Home", body: "Click the link above." },
+        { id: "sushi/yellowtail", title: "Sushi", body: "This is the 🍣 page." },
+        { id: "pizza", title: "Pizza", body: "This is the 🍕page." }
+      ],
+      base: `${window.location.protocol}//${window.location.host}`,
+      onBeforeMount(props, state) {
+        // any processing
+      },
+      getPageById(route) {
+        const [id] = route.params
+        console.log(id)
+        return this.pages.find(page => page.id === id) || this.pages[0]
+      }
+    }
+  </script>
+
+  <style>
+    :host {
+      display: block;
+      margin: 0;
+      padding: 1em;
+      text-align: center;
+      color: #666;
+    }
+    nav {
+      display: block;
+      border-bottom: 1px solid #666;
+      padding: 0 0 1em;
+      text-align: center;
+    }
+    nav > a {
+      display: inline-block;
+      padding: 0 .8em;
+    }
+    nav > a:not(:first-child) {
+      border-left: 1px solid #555;
+    }
+  </style>
+</app>
