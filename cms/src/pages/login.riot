@@ -1,0 +1,99 @@
+<login>
+  <div class="ui card">
+    <h2>login</h2>
+    <div class="ui form">
+      <form onsubmit={ handleSubmit }>
+        <div class="field { errors.username && 'error' }">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input
+              type="text"
+              name="username"
+              placeholder="Enter Username"
+              oninput={ handleInputUsername }
+            />
+          </div>
+          <su-validation-error name="username" errors="{ errors }" />
+        </div>
+        <div class="field { errors.password && 'error' }">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+              oninput={ handleInputPassword }
+            />
+          </div>
+          <su-validation-error name="password" errors="{ errors }" />
+        </div>
+        <div class="inline field">
+          <su-checkbox>Remember Me</su-checkbox>
+        </div>
+        <div class="inline field">
+          <button class="ui teal button">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const errorMessages = {
+      username: ['The username field is required.'],
+      password: ['The password field is required.']
+    }
+
+    export default {
+      onBeforeMount() {
+      },
+      errors: {
+        username: '',
+        password: ''
+      },
+      handleInputUsername(e) {
+        if (e.target.value.length > 0)
+          this.errors.username = ""
+        else
+          this.errors.username = errorMessages.username
+
+        this.update()
+      },
+      handleInputPassword(e) {
+        if (e.target.value.length > 0)
+          this.errors.password = ""
+        else
+          this.errors.password = errorMessages.password
+
+        this.update()
+      },
+      handleSubmit(e) {
+        e.preventDefault()
+
+        if (e.target.username.value.length === 0)
+          this.errors.username = errorMessages.username
+        if (e.target.password.value.length === 0)
+          this.errors.password = errorMessages.password
+
+        this.update()
+      }
+    }
+  </script>
+
+  <style>
+    :host {
+      max-width: 80%;
+      height: 100vh;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    .ui.card {
+      padding: 1rem;
+    }
+  </style>
+</login>

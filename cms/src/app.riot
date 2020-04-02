@@ -1,13 +1,16 @@
 <app>
-  <div class="app-header">
-    <img src="https://riot.js.org/img/logo/riot-logo.svg" alt="riot logo" class="logo">
-  </div>
-  <h1>{ props.title }</h1>
+  <Login if="{!state.isLoggedIn}" />
 
   <script>
-    import observable from '@riotjs/observable'
+    import Login from './pages/login.riot'
 
     export default {
+      components: {
+        Login
+      },
+      state: {
+        isLoggedIn: false
+      },
       onBeforeMount(props, state) {
         // any processing
       }
