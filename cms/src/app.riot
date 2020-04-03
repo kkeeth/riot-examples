@@ -1,15 +1,32 @@
 <app>
-  <Login if="{!state.isLoggedIn}" />
+  <Login if={ !state.isLoggedIn } />
+  <div id="wrapper" if={ state.isLoggedIn }>
+    <Sidebar />
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <Header />
+        <div is={ state.page } class="container-fluid"></div>
+      </div>
+      <Footer />
+    </div>
+  </div>
 
   <script>
     import Login from './pages/login.riot'
+    import Sidebar from './components/sidebar.riot'
+    import Header from './components/header.riot'
+    import Footer from './components/footer.riot'
 
     export default {
       components: {
-        Login
+        Login,
+        Sidebar,
+        Header,
+        Footer
       },
       state: {
-        isLoggedIn: false
+        isLoggedIn: true,
+        page: 'dashboard'
       },
       onBeforeMount(props, state) {
         // any processing
