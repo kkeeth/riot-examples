@@ -37,17 +37,19 @@
           </div>
         </div>
       </div>
-      <div class="item">
-        <i class="sign-out icon"></i>
-        Logout
+      <div class="item logout">
+        <a onclick={ handleLogout }>
+          <i class="sign-out icon"></i>
+          Logout
+        </a>
       </div>
     </div>
   </navigation>
 
   <script>
     export default {
-      onBeforeMount(props, state) {
-        // any processing
+      handleLogout() {
+        this.service.logout()
       }
     }
   </script>
@@ -57,14 +59,29 @@
       color: #fff;
     }
     .ui.sidebar.menu {
-      width: 20%;
+      width: 15%;
     }
     i.user.icon {
-      font-size: 2rem;
+      font-size: 3rem;
     }
-    .ui.list >.item {
-      margin: 1.5rem auto;
+    .ui.menu .item.sidebar-head {
+      text-align: center;
+      font-weight: 900;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #666;
+    }
+    .ui.menu .ui.list > .item a {
+      padding: 2rem .5rem;
       font-size: 1rem;
+      display: block;
+    }
+    .ui.inverted.menu .item > a:hover {
+      color: #00b5ad;
+    }
+    .ui.inverted.menu .item.logout {
+      cursor: pointer;
+      padding: 2rem;
+      border-top: 1px solid #666;
     }
   </style>
 </sidebar>

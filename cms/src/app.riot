@@ -5,10 +5,10 @@
       <sidebar />
       <app-header />
       <div id="container">
-          <app-router />
+        <app-router />
       </div>
       <app-footer />
-    </route>
+    </router>
   </div>
 
   <script>
@@ -27,12 +27,16 @@
         AppRouter
       },
       state: {
-        isLoggedIn: true,
-        page: 'dashboard'
+        isLoggedIn: false
       },
       base: `${window.location.protocol}//${window.location.host}`,
       onBeforeMount(props, state) {
         // any processing
+      },
+      onMounted(props, state) {
+        this.query.select('isLoggedIn').subscribe(val => {
+          this.update({ isLoggedIn: val })
+        })
       }
     }
   </script>
@@ -43,7 +47,7 @@
       height: 100%;
     }
     #wrapper {
-      margin-left: 20%;
+      margin-left: 15%;
       min-height: 100%;
       display: flex;
       flex-direction: column;

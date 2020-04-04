@@ -4,7 +4,7 @@
       My CMS
     </h2>
     <div class="right menu">
-      <su-dropdown items={ dropdownItems }></su-dropdown>
+      <su-dropdown items={ dropdownItems } onchange={ handleChange }></su-dropdown>
     </div>
   </div>
 
@@ -20,14 +20,20 @@
         {
           label: 'Profile',
           icon: 'user',
-          value: 1
+          value: '/profile'
         },
         {
           label: 'Logout',
           icon: 'sign-out',
-          value: 2
+          value: '/logout'
         }
-      ]
+      ],
+      handleChange(e) {
+        if (e.value === '/profile')
+          this.router.push(e.value)
+        else
+          this.service.logout()
+      }
     }
   </script>
 

@@ -22,10 +22,9 @@
     </route>
     <route path="/404">
       <div class="not-found" />
-    </sroute>
+    </route>
 
   <script>
-    import { router } from '@riotjs/route'
     import Dashboard from '../pages/dashboard.riot'
     import Members from '../pages/members.riot'
     import Detail from '../pages/detail.riot'
@@ -41,10 +40,8 @@
         Stats
       },
       onRoute(e) {
-        console.log(e)
         // router.push("/404")
-      },
-      base: `${window.location.protocol}//${window.location.host}`
+      }
     }
   </script>
 

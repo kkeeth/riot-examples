@@ -1,3 +1,120 @@
 <stats>
+  <h2 class="ui teal tag label">Stats</h2>
 
+  <h3 class="ui header">▼Progress</h3>
+  <div class="ui raised segments">
+    <div class="ui segment">
+      <p>Team A</p>
+      <div>
+        <su-progress class="indicating" name="progress" value="70"> Completed</su-progress>
+      </div>
+    </div>
+    <div class="ui segment">
+      <p>Team B</p>
+      <div>
+        <su-progress class="indicating" name="progress" value="30"> Completed</su-progress>
+      </div>
+    </div>
+    <div class="ui segment">
+      <p>Team C</p>
+      <div>
+        <su-progress class="indicating" name="progress" value="20"> Completed</su-progress>
+      </div>
+    </div>
+    <div class="ui segment">
+      <p>Team D</p>
+      <div>
+        <su-progress class="indicating" name="progress" value="60"> Completed</su-progress>
+      </div>
+    </div>
+    <div class="ui segment">
+      <p>Team E</p>
+      <div>
+        <su-progress class="indicating" name="progress" value="100"> Completed</su-progress>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="ui header">▼Rating</h3>
+
+  <div class="ui two column stackable grid">
+    <div class="column">
+      <div class="ui raised segments">
+        <div class="ui segment">
+          <div class="ui horizontal large label">
+            151/500:
+          </div>
+          <su-rating class="heart" value="5" max="5" />
+        </div>
+        <div class="ui segment">
+          <div class="ui horizontal large label">
+            89/500:
+          </div>
+          <su-rating class="heart" value="4" max="5" />
+        </div>
+        <div class="ui segment">
+          <div class="ui horizontal large label">
+            63/500:
+          </div>
+          <su-rating class="heart" value="3" max="5" />
+        </div>
+        <div class="ui segment">
+          <div class="ui horizontal large label">
+            71/500:
+          </div>
+          <su-rating class="heart" value="2" max="5" />
+        </div>
+        <div class="ui segment">
+          <div class="ui horizontal large label">
+            126/500:
+          </div>
+          <su-rating class="heart" value="1" max="5" />
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui raised segments">
+        <div class="ui segment">
+          <div class="ui horizontal large label">
+            151/500:
+          </div>
+          <su-rating class="star" value="5" max="5" />
+        </div>
+        <div class="ui segment">
+          <div class="ui horizontal large label">
+            89/500:
+          </div>
+          <su-rating class="star" value="4" max="5" />
+        </div>
+        <div class="ui segment">
+          <div class="ui horizontal large label">
+            63/500:
+          </div>
+          <su-rating class="star" value="3" max="5" />
+        </div>
+        <div class="ui segment">
+          <div class="ui horizontal large label">
+            71/500:
+          </div>
+          <su-rating class="star" value="2" max="5" />
+        </div>
+        <div class="ui segment">
+          <div class="ui horizontal large label">
+            126/500:
+          </div>
+          <su-rating class="star" value="1" max="5" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .ui.segments > .segment {
+      padding: 2rem 1rem;
+    }
+    .ui.horizontal.label {
+      min-width: 100px;
+      margin-right: 2rem;
+    }
+  </style>
 </stats>

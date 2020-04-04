@@ -38,6 +38,8 @@
   </div>
 
   <script>
+    import { router } from '@riotjs/route'
+
     const errorMessages = {
       username: ['The username field is required.'],
       password: ['The password field is required.']
@@ -69,12 +71,19 @@
       handleSubmit(e) {
         e.preventDefault()
 
-        if (e.target.username.value.length === 0)
-          this.errors.username = errorMessages.username
-        if (e.target.password.value.length === 0)
-          this.errors.password = errorMessages.password
+        const inputUsername = e.target.username.value
+        const inputPassword = e.target.password.value
 
-        this.update()
+        if (inputUsername.length > 0 && inputPassword.length > 0) {
+          this.service.login()
+        } else {
+          if (inputUsername.length === 0)
+            this.errors.username = errorMessages.username
+          if (inputPassword.length === 0)
+            this.errors.password = errorMessages.password
+
+          this.update()
+        }
       }
     }
   </script>
@@ -93,7 +102,13 @@
       font-size: 2rem;
     }
     .ui.card {
-      padding: 1rem;
+      padding: 3rem;
+      width: 50%;
+    }
+    @media (max-width: 375px) {
+      .ui.card {
+        width: 100%;
+      }
     }
   </style>
 </login>
