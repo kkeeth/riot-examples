@@ -815,7 +815,7 @@
     "@parcel/utils" "^1.11.0"
     physical-cpu-count "^2.0.0"
 
-"@riotjs/compiler@^4.5.5":
+"@riotjs/compiler@^4.8.2":
   version "4.8.2"
   resolved "https://registry.yarnpkg.com/@riotjs/compiler/-/compiler-4.8.2.tgz#5c8420fef5721d20e68a664de238b0c0dad3dfd7"
   integrity sha512-h1wfewMR1ZWaYQV8lJFRuabTabrJbLhubJ/0kUN7ZTVAugSPNm8qT65FnX4OsiQBmbwYD3WUJ5qbw6L6fDKMPg==
@@ -831,7 +831,7 @@
     recast "^0.18.7"
     source-map "^0.7.3"
 
-"@riotjs/dom-bindings@^4.6.2":
+"@riotjs/dom-bindings@^4.7.0":
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/@riotjs/dom-bindings/-/dom-bindings-4.7.0.tgz#a978c7720de6730ebc26eadcbe0fb53027f123da"
   integrity sha512-b9lwSOPOL9e7CnJbeKuaSPnOKtUcwjOSBn4bWEuKbiz8kvwGzDiVHjhpRtzSoGAue989+jLViFyzcN/sJFIk+g==
@@ -864,7 +864,7 @@
     curri "^1.0.1"
     dom-nodes "^1.1.3"
 
-"@riotjs/util@1.2.0", "@riotjs/util@^1.1.0", "@riotjs/util@^1.2.0":
+"@riotjs/util@1.2.0", "@riotjs/util@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@riotjs/util/-/util-1.2.0.tgz#a1fdaaa82e214eeff0b740b2b24600b6dfe62d7d"
   integrity sha512-pdKDR9kTPWKR8rNmIJzFoCJ9efXatpwje/2SgWpBgsLH1dFzLiiggN35Kbt8KtaRSOf/nHsrmd6VDirUj4lTLw==
@@ -4394,14 +4394,14 @@ rimraf@^2.6.2:
   dependencies:
     glob "^7.1.3"
 
-riot@4.8.2:
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/riot/-/riot-4.8.2.tgz#6c1cb580a7f83330e711934d3a9b434664c61409"
-  integrity sha512-vpYXyWQIQ/Nzfuq4CaWhPq5vDuWjuNh4EiGvO6/bJau/5ZtKs3EHjEPmA/hMo6hBMsVKOFu65aKUk7ZjDLH3WQ==
+riot@^4.11.1:
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/riot/-/riot-4.11.1.tgz#1ff03734ed01abedfbb1a8b7f0d39480b464bb77"
+  integrity sha512-4tyWXPLKbp1TwjqUXKUwa9QXBceSUihh745++ue9mv9Xa0c3uFr90Lukb+pasAE5qV/BHBUdKB5WIKA4T3T7BA==
   dependencies:
-    "@riotjs/compiler" "^4.5.5"
-    "@riotjs/dom-bindings" "^4.6.2"
-    "@riotjs/util" "^1.1.0"
+    "@riotjs/compiler" "^4.8.2"
+    "@riotjs/dom-bindings" "^4.7.0"
+    "@riotjs/util" "^1.2.0"
     bianco.attr "^1.0.0"
     bianco.query "^1.0.0"
     cumpa "^1.0.1"
@@ -4449,10 +4449,10 @@ saxes@^3.1.9:
   dependencies:
     xmlchars "^2.1.1"
 
-semantic-ui-riot@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/semantic-ui-riot/-/semantic-ui-riot-2.1.3.tgz#54b1615a7278978cf144c8fe67fa536676abaffa"
-  integrity sha512-CwJF2RaE0hxwK1SZOECFQP/jIPacE9maOuwSJLB5KswJfTszdzx11BkOZ5yPPivAP6Vg7k+2K7Dr1vIv6MHi0Q==
+semantic-ui-riot@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/semantic-ui-riot/-/semantic-ui-riot-2.2.1.tgz#590e03e183220f5993ccca212ae30b5cba032981"
+  integrity sha512-fdXZ6YKHftQqbhCj8I1Qse3az4C9Wi6ipVAffaHZa6u1BpODUle7FQ30KcVkAAJ1xb4souzFRDtLEMOTVSco/g==
   dependencies:
     date-fns "^1.29.0"
     q "^1.5.1"
