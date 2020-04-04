@@ -1,36 +1,60 @@
 <app>
-  <Login if={ !state.isLoggedIn } />
+  <login if={ !state.isLoggedIn } />
   <div id="wrapper" if={ state.isLoggedIn }>
-    <Sidebar />
-    <div id="content-wrapper" class="d-flex flex-column">
-      <div id="content">
-        <Header />
-        <div is={ state.page } class="container-fluid"></div>
+    <router base={ base }>
+      <sidebar />
+      <app-header />
+      <div id="container">
+          <app-router />
       </div>
-      <Footer />
-    </div>
+      <app-footer />
+    </route>
   </div>
 
   <script>
     import Login from './pages/login.riot'
     import Sidebar from './components/sidebar.riot'
-    import Header from './components/header.riot'
-    import Footer from './components/footer.riot'
+    import AppHeader from './components/app-header.riot'
+    import AppFooter from './components/app-footer.riot'
+    import AppRouter from './components/app-router.riot'
 
     export default {
       components: {
         Login,
         Sidebar,
-        Header,
-        Footer
+        AppHeader,
+        AppFooter,
+        AppRouter
       },
       state: {
         isLoggedIn: true,
         page: 'dashboard'
       },
+      base: `${window.location.protocol}//${window.location.host}`,
       onBeforeMount(props, state) {
         // any processing
       }
     }
   </script>
+
+  <style>
+    :host {
+      font-family: Futura;
+      height: 100%;
+    }
+    #wrapper {
+      margin-left: 20%;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    #container {
+      flex: 1;
+      background: #eee;
+      padding: 2rem;
+    }
+    h2.ui.label {
+      font-size: 1.5rem;
+    }
+  </style>
 </app>

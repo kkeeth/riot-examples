@@ -1,6 +1,6 @@
 <sidebar>
   <navigation>
-    <div class="ui inverted vertical left fixed menu">
+    <div class="ui visible sidebar inverted vertical menu">
       <div class="item sidebar-head">
         <a class="ui logo icon image" href="/">
           <i class="user icon"></i>
@@ -12,16 +12,28 @@
       <div class="item">
         <div class="ui list">
           <div class="item">
-            <i class="home icon"></i>
-            Dashboard
+            <a href="/dashboard">
+              <i class="home icon"></i>
+              Dashboard
+            </a>
           </div>
           <div class="item">
-            <i class="info circle icon"></i>
-            Profile
+            <a href="/profile">
+              <i class="info circle icon"></i>
+              Profile
+            </a>
           </div>
           <div class="item">
-            <i class="list icon"></i>
-            List
+            <a href="/members">
+              <i class="users icon"></i>
+              Members
+            </a>
+          </div>
+          <div class="item">
+            <a href="/stats">
+              <i class="chart pie icon"></i>
+              Stats
+            </a>
           </div>
         </div>
       </div>
@@ -34,11 +46,6 @@
 
   <script>
     export default {
-      state : {
-        page: 'dashboard',
-        subscription: null,
-        toggleMenu: false
-      },
       onBeforeMount(props, state) {
         // any processing
       }
@@ -46,8 +53,18 @@
   </script>
 
   <style>
+    a.icon {
+      color: #fff;
+    }
+    .ui.sidebar.menu {
+      width: 20%;
+    }
     i.user.icon {
       font-size: 2rem;
+    }
+    .ui.list >.item {
+      margin: 1.5rem auto;
+      font-size: 1rem;
     }
   </style>
 </sidebar>

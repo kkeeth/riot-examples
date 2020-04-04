@@ -1,9 +1,12 @@
 import '@riotjs/hot-reload'
-import {component} from 'riot'
+import { component, register } from 'riot'
+import { Router, Route } from '@riotjs/route'
 import 'semantic-ui-riot'
 import App from './app.riot'
 import '../assets/js/libs'
 
-component(App)(document.getElementById('app'), {
-  title: 'Hello Riot.js!'
-})
+// register Router and Route components are globally
+register('router', Router)
+register('route', Route)
+
+component(App)(document.getElementById('app'))

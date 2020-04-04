@@ -1,3 +1,16 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+html.ios {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+html.ios,
+html.ios body {
+  height: initial !important;
+}
+
 body {
   padding: 1rem 2rem;
   font-family: Futura, Josefin Sans, sans-serif, Helvetica;

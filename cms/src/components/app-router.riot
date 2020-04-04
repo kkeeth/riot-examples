@@ -1,0 +1,59 @@
+<app-router>
+    <route path="/:hoge">
+      {onRoute(route)}
+    </route>
+    <route path="/">
+      <dashboard />
+    </route>
+    <route path="/dashboard">
+      <dashboard />
+    </route>
+    <route path="/members">
+      <members />
+    </route>
+    <route path="/members/detail">
+      <defail />
+    </route>
+    <route path="/profile">
+      <profile />
+    </route>
+    <route path="/stats">
+      <stats />
+    </route>
+    <route path="/404">
+      <div class="not-found" />
+    </sroute>
+
+  <script>
+    import { router } from '@riotjs/route'
+    import Dashboard from '../pages/dashboard.riot'
+    import Members from '../pages/members.riot'
+    import Detail from '../pages/detail.riot'
+    import Profile from '../pages/profile.riot'
+    import Stats from '../pages/stats.riot'
+
+    export default {
+      components: {
+        Dashboard,
+        Members,
+        Detail,
+        Profile,
+        Stats
+      },
+      onRoute(e) {
+        console.log(e)
+        // router.push("/404")
+      },
+      base: `${window.location.protocol}//${window.location.host}`
+    }
+  </script>
+
+  <style>
+    .not-found {
+      background-image: url(/assets/img/404.png);
+      background-repeat: no-repeat;
+      width: auto;
+      height: 500px;
+    }
+  </style>
+</app-router>
