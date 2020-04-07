@@ -1,7 +1,4 @@
 <app-router>
-    <route path="/:hoge">
-      {onRoute(route)}
-    </route>
     <route path="/">
       <dashboard />
     </route>
@@ -11,8 +8,6 @@
     <route path="/members">
       <members />
     </route>
-    <route path="/members/detail">
-      <defail />
     </route>
     <route path="/profile">
       <profile />
@@ -27,7 +22,6 @@
   <script>
     import Dashboard from '../pages/dashboard.riot'
     import Members from '../pages/members.riot'
-    import Detail from '../pages/detail.riot'
     import Profile from '../pages/profile.riot'
     import Stats from '../pages/stats.riot'
 
@@ -35,12 +29,8 @@
       components: {
         Dashboard,
         Members,
-        Detail,
         Profile,
         Stats
-      },
-      onRoute(e) {
-        // router.push("/404")
       }
     }
   </script>
