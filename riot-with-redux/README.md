@@ -1,4 +1,4 @@
-# Riot with Parcel Bundler Template
+# Riot.js with Redux
 
 ## Usage
 
