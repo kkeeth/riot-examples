@@ -1,0 +1,41 @@
+<app>
+  <div class="app-header">
+    <img src="https://riot.js.org/img/logo/riot-logo.svg" alt="riot logo" class="logo">
+  </div>
+  <div class="app">
+    <h1>{ props.title }</h1>
+
+    <p>{ title }</p>
+
+    <button onclick={ initialize }>
+      Initial fetch
+    </button>
+  </div>
+
+  <script>
+    export default {
+      onBeforeMount() {
+        this.title = this.store.getState().sample.name
+      },
+      initialize(e) {
+
+        let action = {
+          type: 'ACTION',
+          payload: new Promise((t, c) => {
+            setTimeout(() => {
+              t()
+              this.store.dispatch(action)
+            }, 1000)
+
+          }) // use AJAX, Axios or other promise execute
+        }
+
+        this.store.subscribe(() => {
+          console.log('Promise executed')
+          this.title = "Updated Redux"
+          this.update()
+        })
+      }
+    }
+  </script>
+</app>
