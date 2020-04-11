@@ -30,49 +30,50 @@
         } else {
           state.todoList = props.todoList
           state.nextId = props.nextId
-          this.updateHasDoneTodo()
+          state.hasDoneTodo = this.checkDoneTodo()
         }
         this.obs = observable(this)
       },
       onMounted() {
         this.on('add todo', (newTask) => {
-          this.updateHasDoneTodo()
+          const updatedList = [
+            ...this.state.todoList,
+            {
+              id: this.state.nextId,
+              ...newTask
+            }
+          ]
           this.update({
-            todoList: [
-              ...this.state.todoList,
-              {
-                id: this.state.nextId,
-                ...newTask
-              }
-            ],
+            todoList: updatedList,
+            hasDoneTodo: this.checkDoneTodo(updatedList),
             nextId: this.state.nextId + 1
           })
         })
         this.on('delete done todos', () => {
-          this.state.todoList
-            = this.state.todoList.filter(item => item.done !== true)
-          this.state.hasDoneTodo = false
-          this.update()
+          this.update({
+            todoList: this.state.todoList.filter(item => item.done !== true),
+            hasDoneTodo: false
+          })
         })
         this.on('delete todo', (filteredTodoList) => {
-          this.state.todoList = filteredTodoList
-          this.updateHasDoneTodo()
-          this.update()
+          this.update({
+            todoList: filteredTodoList,
+            hasDoneTodo: this.checkDoneTodo(filteredTodoList)
+          })
         })
         this.on('toggle todo', (updatedList) => {
-          this.state.todoList = updatedList
-          this.updateHasDoneTodo()
-          this.update()
+          this.update({
+            todoList: updatedList,
+            hasDoneTodo: this.checkDoneTodo(updatedList)
+          })
         })
       },
       onUpdated(props, state) {
         localStorage.setItem('todo state', JSON.stringify(state))
       },
-      updateHasDoneTodo() {
-        this.state.hasDoneTodo
-            = this.state.todoList.filter(item => item.done === true).length > 0
-              ? true
-              : false
+      checkDoneTodo(updatedList) {
+        const todoList = updatedList || this.state.todoList
+        return todoList.some(item => item.done === true)
       }
     }
   </script>
