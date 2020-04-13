@@ -4,13 +4,14 @@
       name="todo"
       value=""
       placeholder="please input task"
-      onkeyup={ input } />
+      oninput={ input }
+    />
     <button disabled={ !isInput }>
       Add #{ props.nextId }
     </button>
     <button
       class="danger"
-      disabled={ !hasDoneTodo }
+      disabled={ !props.hasDoneTodo }
       onclick={ deleteDoneTodos }
     >
       delete done
@@ -18,10 +19,6 @@
   </form>
   <script>
     export default {
-      onBeforeMount(props, state) {
-        this.isInput = false
-        this.hasDoneTodo = props.hasDoneTodo
-      },
       onBeforeUpdate(props) {
         this.hasDoneTodo = props.hasDoneTodo
       },
