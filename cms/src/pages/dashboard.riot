@@ -58,7 +58,6 @@
     </div>
   </div>
 
-  <!--
   <div if={ isLoading } class="ui three column stackable grid">
     <div class="column">
       <div class="ui raised segment">
@@ -109,13 +108,15 @@
       </div>
     </div>
   </div>
-  -->
 
   <script>
     export default {
       isLoading: true,
       onMounted() {
-        this.isLoading = false
+        setTimeout(() => {
+          this.isLoading = false
+          this.update()
+        }, 2000)
       }
     }
   </script>
