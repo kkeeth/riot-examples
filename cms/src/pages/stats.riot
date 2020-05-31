@@ -1,26 +1,13 @@
 <stats>
   <h2 class="ui teal tag label">Stats</h2>
-
-  <h3 class="ui header">▼Progress</h3>
-  <div class="ui raised segments">
-    <div each={bar in progressBars} class="ui segment">
-      <p>{ bar.name }</p>
-      <div>
-        <su-progress class="indicating" name="progress" value={ bar.value }> Completed</su-progress>
-      </div>
-    </div>
-  </div>
-
-  <h3 class="ui header">▼Rating</h3>
-
   <div class="ui two column stackable grid">
     <div class="column">
       <div class="ui raised segments">
-        <div each={ rating in ratings.scores } class="ui segment">
-          <div class="ui horizontal large label">
-            { rating.score }/{ ratings.total }:
+        <div each={ bar in progressBars } class="ui segment">
+          <p>{ bar.name }</p>
+          <div>
+            <su-progress class="indicating" name="progress" value={ bar.value }> Completed</su-progress>
           </div>
-          <su-rating class="heart" value={ rating.rate } max="5" />
         </div>
       </div>
     </div>
@@ -30,7 +17,15 @@
           <div class="ui horizontal large label">
             { rating.score }/{ ratings.total }:
           </div>
-          <su-rating class="star" value={ rating.rate } max="5" />
+          <su-rating class="star" value={ rating.rate } max={ ratings.max } />
+        </div>
+      </div>
+      <div class="ui raised segments">
+        <div each={ rating in ratings.scores } class="ui segment">
+          <div class="ui horizontal large label">
+            { rating.score }/{ ratings.total }:
+          </div>
+          <su-rating class="heart" value={ rating.rate } max={ ratings.max } />
         </div>
       </div>
     </div>
@@ -47,6 +42,7 @@
       ],
       ratings: {
         total: 500,
+        max: 5,
         scores: [
           { rate: 5, score: 151 },
           { rate: 4, score: 89 },
@@ -58,8 +54,11 @@
     }
   </script>
   <style>
+    .ui.grid {
+      margin-top: 1rem;
+    }
     .ui.segments > .segment {
-      padding: 1.5rem 1rem;
+      padding: 1.2rem 1rem;
     }
     .ui.horizontal.label {
       min-width: 100px;
