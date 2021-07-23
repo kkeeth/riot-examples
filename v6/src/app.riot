@@ -1,0 +1,102 @@
+<app>
+  <div class="container">
+    <router>
+      <div class="row">
+        <nav class="menu column">
+          <a
+            each={page in state.pages}
+            class={state.activePage === page ? 'active' : '' }
+            href={page.path}>
+            {page.label}
+          </a>
+        </nav>
+      </div>
+      <div if={state.showNotFound} class="row">
+        <div class="column column-60">
+          <not-found />
+        </div>
+      </div>
+      <div if={!state.showNotFound} class="row">
+        <div class="column column-60">
+          <route each={page in state.pages} path={page.path}>
+            <main is={page.componentName}/>
+          </route>
+        </div>
+        <!-- notice how <sidebar> is registered as global component -->
+        <div class="column column-40">
+          <sidebar/>
+        </div>
+      </div>
+    </router>
+  </div>
+
+  <script>
+    import { Router, Route, route, toRegexp, match } from '@riotjs/route'
+    import lazy from '@riotjs/lazy'
+    import Loader from './components/includes/loader/loader.riot'
+    import NotFound from './pages/not-found.riot'
+    import pages from './pages'
+
+    export default {
+      components: {
+        Router,
+        Route,
+        NotFound,
+        Home: lazy(Loader, () => import(
+          /* webpackPrefetch: true, webpackChunkName: 'pages/home' */
+          './pages/home.riot'
+        )),
+        About: lazy(Loader, () => import(
+          /* webpackPrefetch: true, webpackChunkName: 'pages/about' */
+          './pages/about.riot'
+        )),
+      },
+      state: {
+        pages,
+        showNotFound: false,
+        activePage: null
+      },
+      onBeforeMount({ isServer }) {
+        // create a stream on all routes to catch the not-found page
+        this.anyRouteStream = route('(.*)')
+        this.anyRouteStream.on.value(this.onAnyRoute)
+      },
+      onAnyRoute(path) {
+        // show the not found page if none of the page paths are matched
+        const activePage = pages.find(p => match(path.pathname, toRegexp(p.path)))
+
+        this.update({
+          activePage,
+          showNotFound: !activePage
+        })
+      },
+      onBeforeUnmout() {
+        this.anyRouteStream.end()
+      }
+    }
+  </script>
+
+  <style>
+    :host {
+      padding: 2rem 0;
+    }
+
+    .menu {
+      margin: 1rem -1rem;
+    }
+
+    .menu a {
+      padding: 0 1rem;
+      color: black;
+    }
+
+    .menu a.active.active {
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .menu a:hover, .menu a:focus, .menu a:active {
+      text-decoration: underline;
+    }
+  </style>
+</app>
