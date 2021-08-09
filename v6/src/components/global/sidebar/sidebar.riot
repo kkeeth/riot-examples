@@ -14,16 +14,12 @@
 
   <script lang="ts">
     import { withTypes, RiotComponent } from 'riot'
+    import { MyComponentProps, MyComponentState } from './types'
     import User from '../../includes/user/user.riot'
 
-    export type MyComponentProps = {}
-
-    export type MyComponentState = {
-      name: string,
-      showUser: boolean
+    export interface MyComponent extends RiotComponent<MyComponentProps, MyComponentState> {
+      toggleUser(): void
     }
-
-    export type MyComponent = RiotComponent<MyComponentProps, MyComponentState>
 
     export default withTypes<MyComponent>({
       components: {

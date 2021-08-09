@@ -1,15 +1,14 @@
-
-const path = require('path')
-const webpack = require('webpack')
+const { resolve } = require('path')
+const isDevelopment = process.env.NODE_ENV === 'development'
 
 module.exports = {
   entry: {
-    app: './src/index.js',
+    app: './src/index.ts',
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: resolve(__dirname, 'dist'),
     publicPath: '/dist/',
-    filename: '[name].bundle.js',
+    filename: 'bundle.js',
     chunkFilename: 'chunks/[name]/index.[chunkhash].js',
     devtoolModuleFilenameTemplate: 'webpack://[namespace]/[resource-path]?[loaders]',
     devtoolFallbackModuleFilenameTemplate: 'source-webpack:///[resourcePath]?[hash]'
@@ -18,13 +17,13 @@ module.exports = {
     alias: {
       path: require.resolve("path-browserify")
     },
+    extensions: ['.ts', '.js', '.riot']
   },
   devServer: {
     open: true,
     port: 3000,
     hot: true,
     inline: true,
-    stats: 'errors-only',
     historyApiFallback: {
       index: 'index.html'
     }
@@ -33,7 +32,7 @@ module.exports = {
     splitChunks: {
       chunks: 'async',
       minSize: 30000,
-      maxSize: 0,
+      //maxSize: 0,
       minChunks: 1,
       maxAsyncRequests: 6,
       maxInitialRequests: 4,
@@ -54,12 +53,28 @@ module.exports = {
   module: {
     rules: [
       {
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: isDevelopment,
+          appendTsSuffixTo: [/\.riot$/]
+        }
+      },
+      {
         test: /\.riot$/,
         exclude: /node_modules/,
         use: [{
           loader: '@riotjs/webpack-loader',
           options: {
             hot: true
+          }
+        }]
+      },
+      {
+        test: /\.ts$/,
+        use: [{
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: isDevelopment
           }
         }]
       }
