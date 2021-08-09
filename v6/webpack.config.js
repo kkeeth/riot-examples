@@ -9,14 +9,22 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/',
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     chunkFilename: 'chunks/[name]/index.[chunkhash].js',
-    devtoolModuleFilenameTemplate: 'source-webpack:///[resourcePath]',
+    devtoolModuleFilenameTemplate: 'webpack://[namespace]/[resource-path]?[loaders]',
     devtoolFallbackModuleFilenameTemplate: 'source-webpack:///[resourcePath]?[hash]'
   },
-  devtool: '#source-map',
+  resolve: {
+    alias: {
+      path: require.resolve("path-browserify")
+    },
+  },
   devServer: {
     open: true,
+    port: 3000,
+    hot: true,
+    inline: true,
+    stats: 'errors-only',
     historyApiFallback: {
       index: 'index.html'
     }

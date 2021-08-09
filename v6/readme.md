@@ -1,4 +1,4 @@
-# v6
+# riot-v6-sample
 
 
 
