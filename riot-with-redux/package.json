@@ -15,15 +15,15 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@riotjs/hot-reload": "^4.0.0",
-    "@riotjs/parcel-plugin-riot": "^4.0.1",
-    "parcel-bundler": "^1.12.4"
+    "@riotjs/hot-reload": "^6.0.0",
+    "@riotjs/parcel-plugin-riot": "^6.0.0",
+    "parcel-bundler": "^1.12.5"
   },
   "dependencies": {
     "@riotjs/observable": "^4.0.4",
     "redux": "^4.0.5",
     "redux-promise-middleware": "^6.1.2",
     "redux-thunk": "^2.3.0",
-    "riot": "^4.11.0"
+    "riot": "^6.0.0"
   }
 }

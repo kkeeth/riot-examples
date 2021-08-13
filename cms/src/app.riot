@@ -30,9 +30,6 @@
         isLoggedIn: false
       },
       base: window.location.origin,
-      onBeforeMount(props, state) {
-        // any processing
-      },
       onMounted(props, state) {
         this.query.select('isLoggedIn').subscribe(val => {
           this.update({ isLoggedIn: val })

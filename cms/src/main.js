@@ -3,7 +3,7 @@ import { component, register } from 'riot'
 import { Router, Route } from '@riotjs/route'
 import 'semantic-ui-riot'
 import App from './app.riot'
-import '../assets/js/libs'
+import './libs/store'
 
 // register Router and Route components are globally
 register('router', Router)

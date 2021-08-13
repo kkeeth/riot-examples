@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Riot.js Commits Viewer</title>
     <link rel="stylesheet" href="style.css">
-    <script src="riot+compiler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/6.0.3/riot+compiler.min.js"></script>
   </head>
   <body>
     <!-- app -->
@@ -20,7 +20,7 @@
         .then(() => {
           riot.mount('app', {
             title: 'Riot.js commits viewer',
-            branches: ['master', 'dev']
+            branches: ['main', 'dev']
           })
         })
         .catch(e => {

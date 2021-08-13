@@ -30,4 +30,3 @@ node_modules
 .npm-debug.log
 
 dist
-assets/response.json

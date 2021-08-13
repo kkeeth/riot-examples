@@ -1,8 +1,13 @@
 <draggable-header>
   <div class="draggable-header"
-    onmousedown={ startDrag } ontouchstart= { startDrag }
-    onmousemove={ onDrag } ontouchmove={ onDrag }
-    onmouseup={ stopDrag } ontouchend={ stopDrag } onmouseleave={ stopDrag }>
+    onmousedown={ startDrag }
+    ontouchstart= { startDrag }
+    onmousemove={ onDrag }
+    ontouchmove={ onDrag }
+    onmouseup={ stopDrag }
+    ontouchend={ stopDrag }
+    onmouseleave={ stopDrag }
+  >
     <svg class="bg" width="320" height="560">
       <path d={ headerPath() } fill="#ED1846"></path>
     </svg>

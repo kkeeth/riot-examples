@@ -52,7 +52,7 @@
         // any processing
       },
       getPageById(route) {
-        const id = route.params.join('/')
+        const id = Object.values(route.params).join('/')
         return this.pages.find(page => page.id === id) || this.pages[0]
       }
     }
