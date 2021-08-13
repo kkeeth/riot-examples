@@ -1,28 +1,28 @@
 <app-router>
-    <route path="/">
-      <dashboard />
-    </route>
-    <route path="/dashboard">
-      <dashboard />
-    </route>
-    <route path="/members">
-      <members />
-    </route>
-    <route path="/members/:id">
-      <defail />
-    </route>
-    <route path="/profile">
-      <profile />
-    </route>
-    <route path="/stats">
-      <stats />
-    </route>
-    <route path="/404">
-      <not-found />
-    </route>
-    <route path="(.*)">
-      { onRoute(route) }
-    </route>
+  <route path="/">
+    <dashboard />
+  </route>
+  <route path="/dashboard">
+    <dashboard />
+  </route>
+  <route path="/members">
+    <members />
+  </route>
+  <route path="/members/:id">
+    <defail />
+  </route>
+  <route path="/profile">
+    <profile />
+  </route>
+  <route path="/stats">
+    <stats />
+  </route>
+  <route path="/404">
+    <not-found />
+  </route>
+  <route path="(.*)">
+    { onRoute(route) }
+  </route>
 
   <script>
     import { router } from '@riotjs/route'

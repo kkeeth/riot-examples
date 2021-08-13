@@ -2,7 +2,6 @@
   "name": "riot-examples",
   "version": "1.0.0",
   "description": "",
-  "main": "riot+compiler.min.js",
   "scripts": {
     "modal": "http-server ./modal -o",
     "github": "http-server ./github -o",
