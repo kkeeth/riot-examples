@@ -21,9 +21,9 @@
   },
   "dependencies": {
     "@riotjs/observable": "^4.0.4",
-    "redux": "^4.0.5",
+    "redux": "^4.1.1",
     "redux-promise-middleware": "^6.1.2",
     "redux-thunk": "^2.3.0",
-    "riot": "^6.0.0"
+    "riot": "^6.0.3"
   }
 }
