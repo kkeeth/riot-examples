@@ -3,27 +3,47 @@
 
   <div class="countdown-container">
     <div class="countdown-elements days-contents">
-      <p class="big-text">0</p>
+      <p class="big-text">{ days }</p>
       <span>days</span>
     </div>
     <div class="countdown-elements hours-contents">
-      <p class="big-text">0</p>
+      <p class="big-text">{ hours }</p>
       <span>hours</span>
     </div>
     <div class="countdown-elements minutes-^contents">
-      <p class="big-text">0</p>
+      <p class="big-text">{ minutes }</p>
       <span>minutes</span>
     </div>
     <div class="countdown-elements seconds-contents">
-      <p class="big-text">0</p>
+      <p class="big-text">{ seconds }</p>
       <span>seconds</span>
     </div>
   </div>
 
   <script>
+    const newYears = `1 Jan ${new Date().getFullYear()+1}`
+
     export default {
-      onBeforeMount(props, state) {
-        // any processing
+      state: {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      },
+      onMounted() {
+        this.countdown()
+        setInterval(this.countdown, 1000)
+      },
+      countdown() {
+        const newYearsDate = new Date(newYears)
+        const currentDate = new Date()
+        const totalSeconds = (newYearsDate - currentDate) / 1000
+
+        this.days = Math.floor(totalSeconds / 3600 / 24)
+        this.hours = Math.floor(totalSeconds / 3600) % 24
+        this.minutes = Math.floor(totalSeconds / 60) % 60
+        this.seconds = Math.floor(totalSeconds) % 60
+        this.update()
       }
     }
   </script>
