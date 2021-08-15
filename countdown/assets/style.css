@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Futura, Josefin sans, sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+app {
+  background-image: url(./lake-1581879_1920.jpg);
+  background-size: auto;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 4rem;
+}
+
+.countdown-container {
+  display: flex;
+}
+
+.countdown-elements {
+  text-align: center;
+}
+
+.countdown-elements span {
+  font-family: Josefin sans;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.countdown-elements + .countdown-elements {
+  margin-left: 10px;
+}
+.big-text {
+  font-weight: bold;
+  font-size: 6rem;
+  line-height: 1;
+  margin: 0 2rem;
+}

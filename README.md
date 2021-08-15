@@ -24,7 +24,8 @@ $ yarn modal
     "tutorial": "http-server ./tutorial -o",
     "svg": "http-server ./svg-bindings -o",
     "todo": "http-server ./todo -o",
-    "event": "http-server ./nested-event-handler -o"
+    "event": "http-server ./nested-event-handler -o",
+    "countdown": "http-server ./countdown -o"
   }
 ```
 
@@ -39,6 +40,7 @@ $ yarn modal
 * <a href="https://kkeeth.github.io/riot-examples/tutorial/" target="_blank" rel="noopener noreferrer">Tutorial Demo</a>
 * <a href="https://kkeeth.github.io/riot-examples/svg-bindings/" target="_blank" rel="noopener noreferrer">SVG Demo</a>
 * <a href="https://kkeeth.github.io/riot-examples/nested-event-handler/" target="_blank" rel="noopener noreferrer">Event Handler Demo</a>
+* <a href="https://kkeeth.github.io/riot-examples/countdown/" target="_blank" rel="noopener noreferrer">Countdown Demo</a>
 
 # License
 

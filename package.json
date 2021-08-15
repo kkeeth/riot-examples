@@ -13,7 +13,8 @@
     "plunker": "http-server ./plunker-template -o",
     "event-handler": "http-server ./nested-event-handler -o",
     "todo": "http-server ./todo-app -o",
-    "event": "http-server ./nested-event-handler -o"
+    "event": "http-server ./nested-event-handler -o",
+    "countdown": "http-server ./countdown -o"
   },
   "repository": {
     "type": "git",
