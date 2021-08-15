@@ -15,9 +15,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@riotjs/hot-reload": "^6.0.0",
-    "@riotjs/parcel-plugin-riot": "^6.0.0",
-    "parcel-bundler": "^1.12.5"
+    "@riotjs/hot-reload": "6.0.0",
+    "@riotjs/parcel-plugin-riot": "6.0.0",
+    "parcel-bundler": "1.12.5"
   },
   "dependencies": {
     "@riotjs/observable": "^4.0.4",
