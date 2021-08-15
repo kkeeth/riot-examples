@@ -12,6 +12,10 @@
   },
   "packageRules": [
     {
+      "updateTypes": ["patch"],
+      "automerge": true
+    },
+    {
       "depTypeList": ["devDependencies"],
       "automerge": true
     }
