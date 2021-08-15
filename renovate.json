@@ -7,6 +7,9 @@
   "patch": {
     "automerge": true
   },
+  "lockFileMaintenance": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "depTypeList": ["devDependencies"],
