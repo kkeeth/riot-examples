@@ -7,15 +7,15 @@
       <span>days</span>
     </div>
     <div class="countdown-elements hours-contents">
-      <p class="big-text">{ hours }</p>
+      <p class="big-text">{ formatTime(hours) }</p>
       <span>hours</span>
     </div>
     <div class="countdown-elements minutes-^contents">
-      <p class="big-text">{ minutes }</p>
+      <p class="big-text">{ formatTime(minutes) }</p>
       <span>minutes</span>
     </div>
     <div class="countdown-elements seconds-contents">
-      <p class="big-text">{ seconds }</p>
+      <p class="big-text">{ formatTime(seconds) }</p>
       <span>seconds</span>
     </div>
   </div>
@@ -44,6 +44,11 @@
         this.minutes = Math.floor(totalSeconds / 60) % 60
         this.seconds = Math.floor(totalSeconds) % 60
         this.update()
+      },
+      formatTime(time) {
+        return time < 10
+                    ? `0${time}`
+                    : time
       }
     }
   </script>

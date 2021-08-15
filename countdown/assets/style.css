@@ -11,7 +11,7 @@ body {
 
 app {
   background-image: url(./lake-1581879_1920.jpg);
-  background-size: auto;
+  background-size: cover;
   background-position: center center;
   display: flex;
   flex-direction: column;
@@ -23,10 +23,14 @@ app {
 h1 {
   font-weight: normal;
   font-size: 4rem;
+  text-align: center;
 }
 
 .countdown-container {
+  margin-top: 2rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .countdown-elements {
@@ -45,5 +49,5 @@ h1 {
   font-weight: bold;
   font-size: 6rem;
   line-height: 1;
-  margin: 0 2rem;
+  margin: 0 2rem 0.5rem;
 }
