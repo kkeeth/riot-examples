@@ -27,17 +27,6 @@
           { name: 'user', id: 4 }
         ]
       },
-      // TODO: animation when complete mounting
-      //
-      // onMounted() {
-      //   this.animations = animore('li', {
-      //     duration: 300,
-      //     translateX: [200, 0]
-      //   })
-      //   this.animations.forEach(({ stash }) => stash())
-      //   console.log(this.animations)
-      //   this.animations.forEach(({ apply }) => apply())
-      // },
       onBeforeUpdate() {
         this.animations = animore('li', {
           duration: 300,
