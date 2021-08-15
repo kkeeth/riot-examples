@@ -12,11 +12,6 @@ For example(modal demo)
 ```bash
 $ yarn install
 $ yarn modal
-
-or
-
-$ npm install
-$ npm run modal
 ```
 
 ```json
@@ -27,7 +22,9 @@ $ npm run modal
     "bheader": "http-server ./bounds-header -o",
     "radar": "http-server ./radar-chart -o",
     "tutorial": "http-server ./tutorial -o",
-    "svg": "http-server ./svg-bindings -o"
+    "svg": "http-server ./svg-bindings -o",
+    "todo": "http-server ./todo -o",
+    "event": "http-server ./nested-event-handler -o"
   }
 ```
 

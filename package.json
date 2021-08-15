@@ -12,19 +12,20 @@
     "svg": "http-server ./svg-bindings -o",
     "plunker": "http-server ./plunker-template -o",
     "event-handler": "http-server ./nested-event-handler -o",
-    "todo": "http-server ./todo-app -o"
+    "todo": "http-server ./todo-app -o",
+    "event": "http-server ./nested-event-handler -o"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/k-kuwahara/riot-examples.git"
+    "url": "git+ssh://git@github.com/kkeeth/riot-examples.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "kkeeth <zensin0082@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/k-kuwahara/riot-examples/issues"
+    "url": "https://github.com/kkeeth/riot-examples/issues"
   },
-  "homepage": "https://github.com/k-kuwahara/riot-examples#readme",
+  "homepage": "https://github.com/kkeeth/riot-examples#readme",
   "devDependencies": {
     "http-server": "13.0.0"
   }

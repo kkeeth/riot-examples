@@ -7,12 +7,12 @@ First of all, plz execute this commands.
 ```cmd
 $ cd ../
 $ yarn install
-$ yarn plunker
+$ yarn todo
 ```
 
 Perhaps the browser will open automatically and the application should start.
 
-URL: [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
+URL: [http://0.0.0.0:8080/](http://0.0.0.0:8080/)
 
 ## Demo
 
