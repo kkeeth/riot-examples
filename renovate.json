@@ -12,11 +12,11 @@
   },
   "packageRules": [
     {
-      "updateTypes": ["minor", "patch"],
+      "matchUpdateTypes": ["minor", "patch", "pin"],
       "automerge": true
     },
     {
-      "depTypeList": ["devDependencies"],
+      "matchDepTypes": ["devDependencies"],
       "automerge": true
     }
   ]
