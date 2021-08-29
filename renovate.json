@@ -3,8 +3,12 @@
     "config:base"
   ],
   "timezone": "Asia/Tokyo",
+  "schedule": ["every weekend"],
   "labels": ["renovate"],
   "patch": {
+    "automerge": true
+  },
+  "minor: {
     "automerge": true
   },
   "lockFileMaintenance": {
@@ -12,7 +16,7 @@
   },
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin"],
+      "matchUpdateTypes": ["pin"],
       "automerge": true
     },
     {
