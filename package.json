@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/kkeeth/riot-examples#readme",
   "devDependencies": {
-    "http-server": "13.0.0"
+    "http-server": "13.0.1"
   }
 }
