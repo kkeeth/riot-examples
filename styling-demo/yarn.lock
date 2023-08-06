@@ -983,12 +983,12 @@
   dependencies:
     "@riotjs/util" "^2.0.4"
 
-"@riotjs/hot-reload@6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@riotjs/hot-reload/-/hot-reload-6.0.0.tgz#09a6e46feb9d61a8877378e325b30dc9fc2d82b8"
-  integrity sha512-WgsEWZosmlAltgejBTGREPdZSJ12p4WPdI9RfnN73StTI+i9+6tGVpwSw2spWAf9j5+JEkpPdPuVs5rRRaGuQw==
+"@riotjs/hot-reload@6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@riotjs/hot-reload/-/hot-reload-6.0.1.tgz#0fc7669dcc8cbf7d399933dbdbc44ca00feecd19"
+  integrity sha512-cPWkT/mcdpeOAheo0YooG/mZDZJebZn6AA28orZ7IIh1emYip45/bghHUi5+q9cEHj3KsP5z6djSVZDUFbBGqA==
   dependencies:
-    bianco.query "^1.0.0"
+    bianco.query "^1.1.4"
 
 "@riotjs/observable@^4.0.4":
   version "4.0.4"
@@ -1302,12 +1302,24 @@ bianco.dom-to-array@^0.0.10:
   resolved "https://registry.yarnpkg.com/bianco.dom-to-array/-/bianco.dom-to-array-0.0.10.tgz#376e1a37c4ca5119b3b6de9fd2d5c994cf0152a3"
   integrity sha512-EFYkcEGPmIqatvh+6I2eF6/X4mDtEyGoBucqmudJ5qABbFOw3RPIWB913aLD1FTaux8pZtYzD/yvcwGJKSNgXg==
 
+bianco.dom-to-array@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/bianco.dom-to-array/-/bianco.dom-to-array-1.1.0.tgz#f8ebec7f8ffb26f7a2d0d0ce90551ebcb16f972d"
+  integrity sha512-IWUgplQRhJSZh+7PgD/my5+X27PXNUFdcHPosOYz39a/iFF8Wl9d0N/mOArdR7Zgr3J0Q9pKVk7nO6W+7XZwBg==
+
 bianco.query@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/bianco.query/-/bianco.query-1.0.0.tgz#1149b4d5b4175ef28086ba5851507bebd60d161a"
   integrity sha512-pDstv5+tsuw//wNuPnXuf4DjyN116tcH/a7hxbqH1OpWMsBgBkp/O29uxlWEZWN5e6hCaGajLNA9CAGTsgYeWw==
   dependencies:
     bianco.dom-to-array "^0.0.10"
+
+bianco.query@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/bianco.query/-/bianco.query-1.1.4.tgz#f550c3e7a3478cf65412957a843dc7a64c5e06dd"
+  integrity sha512-jUu8l484ckacCBmxN0gYLZ4Ge5aMfReL+aYNiC81s37s8+l0+rn9pnQayEgQtMHGlnL8ejd+x5U2PKpo0rvQzw==
+  dependencies:
+    bianco.dom-to-array "^1.1.0"
 
 binary-extensions@^1.0.0:
   version "1.13.1"
