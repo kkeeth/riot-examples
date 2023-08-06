@@ -24,6 +24,6 @@
     "animejs": "^3.2.1",
     "animore": "^2.0.3",
     "riot": "^6.0.3",
-    "sanitize.css": "^12.0.1"
+    "sanitize.css": "^13.0.0"
   }
 }
