@@ -256,6 +256,11 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.15.3.tgz#3416d9bea748052cfcb63dbcc27368105b1ed862"
   integrity sha512-O0L6v/HvqbdJawj0iBEfVQMc3/6WP+AeOsovsIgBFyJaG+W2w7eqvZB7puddATmWuARlm1SX7DwxJ/JJUnDpEA==
 
+"@babel/parser@^7.18.10":
+  version "7.22.7"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.22.7.tgz#df8cf085ce92ddbdbf668a7f186ce848c9036cae"
+  integrity sha512-7NF8pOkHP5o2vpmGgNGcfAeCvOYhGLyA3Z4eBQkT1RJlWu47n63bCs93QfJ2hIAFCil7L5P2IWhs1oToVgrL0Q==
+
 "@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@^7.14.5":
   version "7.14.5"
   resolved "https://registry.yarnpkg.com/@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining/-/plugin-bugfix-v8-spread-parameters-in-optional-chaining-7.14.5.tgz#4b467302e1548ed3b1be43beae2cc9cf45e0bb7e"
@@ -960,26 +965,26 @@
     "@parcel/utils" "^1.11.0"
     physical-cpu-count "^2.0.0"
 
-"@riotjs/compiler@^6.0.3":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@riotjs/compiler/-/compiler-6.0.3.tgz#913abeef357d6d7986dedc6d74313d16d5e684d2"
-  integrity sha512-xnYQhW1QqVpbN5w04pHj6Bnywwk4hf3PXJbnHYd8Lz1PNkTIkCZNg4OVf5FOL9c/z1yL0m3R6jm84vl9QWuM0A==
+"@riotjs/compiler@^6.1.3":
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/@riotjs/compiler/-/compiler-6.4.2.tgz#f1886c620a1d47fd6eabf165e24f2a65cc6baba2"
+  integrity sha512-MsxPHcOPVAi3bBiS/SW0DS1kxxki9+QS1FsBhKRs+oqFNEUlIm/ESt9BudSB9ISblL18q9Y8Z5uGOrmUXOga8Q==
   dependencies:
-    "@babel/parser" "^7.15.0"
+    "@babel/parser" "^7.18.10"
     "@riotjs/parser" "^4.3.1"
-    "@riotjs/util" "2.0.4"
+    "@riotjs/util" "2.1.1"
     cssesc "^3.0.0"
     cumpa "^1.0.1"
     curri "^1.0.1"
     dom-nodes "^1.1.3"
-    globals "^13.10.0"
+    globals "^13.17.0"
     recast "^0.20.5"
-    source-map "^0.7.3"
+    source-map "^0.7.4"
 
-"@riotjs/dom-bindings@6.0.2":
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@riotjs/dom-bindings/-/dom-bindings-6.0.2.tgz#86352cc489a5737c4e35701fd5809af28354f358"
-  integrity sha512-eTle5JooLr8gfTyYsZdkca3Glfx1Jf0XajzICIQO1nWKLvHqlTgvZfIB+OJ62z0Pufx8xRlE/H5FKJvcNB64/A==
+"@riotjs/dom-bindings@6.0.3":
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@riotjs/dom-bindings/-/dom-bindings-6.0.3.tgz#741c0340b3a27351357ce2bb1001e5b2708d1640"
+  integrity sha512-ajBgXquwkj8ZaGDhGWJc8n74dCZxvxzoE2hT26T+aAfHVAz5Nhk6jWjmggZ42nN4AX9CQJUMEGY9KJeHDj1ABg==
   dependencies:
     "@riotjs/util" "^2.0.4"
 
@@ -1008,10 +1013,15 @@
     curri "^1.0.1"
     dom-nodes "^1.1.3"
 
-"@riotjs/util@2.0.4", "@riotjs/util@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@riotjs/util/-/util-2.0.4.tgz#26f8d6928063b77e3e677a38762fd039a9f7a0bd"
-  integrity sha512-C+YpN8p30T1+qtuPaHS2uobRHG+EpQhtXsu+Ul7sOStb1PnqptXut2YHSffQ6Xlu+FoOlP/BcMu+RVYvzWPmkg==
+"@riotjs/util@2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@riotjs/util/-/util-2.1.1.tgz#7c07b6b8f227548e3f6c187b8cb798fee7b944cd"
+  integrity sha512-uE3yhckx6QhFESlA/jO/Nj8HcOeRiCV3Zw1OrdKiRAMh4o/JBhGuAkoknPWCDTHSFIffHuWV8EorbO1wZLBpvw==
+
+"@riotjs/util@^2.0.4":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@riotjs/util/-/util-2.2.1.tgz#bade985d1507a8d9400ecb3ea8c671e41950854c"
+  integrity sha512-qoL8REqNPFSGcCaBuzmqKICmVjSimQ3gD7EHrgBqSLgO/7Z83nRtCPcARWwjGHYm8TtDBSFZeton34Qi01XXOg==
 
 "@types/q@^1.5.1":
   version "1.5.5"
@@ -1291,23 +1301,23 @@ bcrypt-pbkdf@^1.0.0:
     tweetnacl "^0.14.3"
 
 bianco.attr@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/bianco.attr/-/bianco.attr-1.0.0.tgz#38a16f28ad840cb57e0ab3638b8016e03c2bf1f2"
-  integrity sha512-ry700auBXrfRcn18wgOlDeCIAOy1HKnUrM96hc2xbzt4FQL+pfXTUGrt++gg9/rpp7JD4JUXi0X1OB7um+jm2w==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/bianco.attr/-/bianco.attr-1.1.1.tgz#d69b22f9165a537159bc45ae60414b0419e6a1d1"
+  integrity sha512-fTjfPnnGYiCVbe5UltC/LsDRtJE+MjmadtL749CMIfCwjl18sdbCkaQ7cgtSao6iC9ZJC8Pzw0rjMdIuA6mK1g==
   dependencies:
-    bianco.dom-to-array "^0.0.10"
+    bianco.dom-to-array "^1.1.0"
 
-bianco.dom-to-array@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/bianco.dom-to-array/-/bianco.dom-to-array-0.0.10.tgz#376e1a37c4ca5119b3b6de9fd2d5c994cf0152a3"
-  integrity sha512-EFYkcEGPmIqatvh+6I2eF6/X4mDtEyGoBucqmudJ5qABbFOw3RPIWB913aLD1FTaux8pZtYzD/yvcwGJKSNgXg==
+bianco.dom-to-array@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/bianco.dom-to-array/-/bianco.dom-to-array-1.1.0.tgz#f8ebec7f8ffb26f7a2d0d0ce90551ebcb16f972d"
+  integrity sha512-IWUgplQRhJSZh+7PgD/my5+X27PXNUFdcHPosOYz39a/iFF8Wl9d0N/mOArdR7Zgr3J0Q9pKVk7nO6W+7XZwBg==
 
 bianco.query@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/bianco.query/-/bianco.query-1.0.0.tgz#1149b4d5b4175ef28086ba5851507bebd60d161a"
-  integrity sha512-pDstv5+tsuw//wNuPnXuf4DjyN116tcH/a7hxbqH1OpWMsBgBkp/O29uxlWEZWN5e6hCaGajLNA9CAGTsgYeWw==
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/bianco.query/-/bianco.query-1.1.4.tgz#f550c3e7a3478cf65412957a843dc7a64c5e06dd"
+  integrity sha512-jUu8l484ckacCBmxN0gYLZ4Ge5aMfReL+aYNiC81s37s8+l0+rn9pnQayEgQtMHGlnL8ejd+x5U2PKpo0rvQzw==
   dependencies:
-    bianco.dom-to-array "^0.0.10"
+    bianco.dom-to-array "^1.1.0"
 
 binary-extensions@^1.0.0:
   version "1.13.1"
@@ -2620,10 +2630,10 @@ globals@^11.1.0:
   resolved "https://registry.yarnpkg.com/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
   integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
 
-globals@^13.10.0:
-  version "13.11.0"
-  resolved "https://registry.yarnpkg.com/globals/-/globals-13.11.0.tgz#40ef678da117fe7bd2e28f1fab24951bd0255be7"
-  integrity sha512-08/xrJ7wQjK9kkkRoI3OFUBbLx4f+6x3SGwcPvQ0QH6goFDrOU2oyAWrmh3dJezu65buo+HBMzAMQy6rovVC3g==
+globals@^13.17.0:
+  version "13.20.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-13.20.0.tgz#ea276a1e508ffd4f1612888f9d1bad1e2717bf82"
+  integrity sha512-Qg5QtVkCy/kv3FUSlu4ukeZDVf9ee0iXLAUYX13gbR17bnejFTzr4iS9bY7kwCf1NztRNm1t91fjOiyx4CSwPQ==
   dependencies:
     type-fest "^0.20.2"
 
@@ -4604,12 +4614,12 @@ rimraf@^2.6.2:
     glob "^7.1.3"
 
 riot@^6.0.3:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/riot/-/riot-6.0.3.tgz#8c4ea09852c88d5d3d0113a35dce97f14e58eb67"
-  integrity sha512-BLYpsHLcVIOsNKc4bbda3DC1+YmdDXpUYPQm+7hUX3OqfFvsUl1rH8W8FhjPvpji1bOrml3CNpFLmqLYGqkpEw==
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/riot/-/riot-6.1.2.tgz#439049b611fdd71191dc3ea2a96b6bea3db52a48"
+  integrity sha512-JYGKN6D2FwNP+eH2suh13jhQPXnaAeXdwCIWH0vz2UvhLBY9mTFZv6/dPAyEluHTf9bjAJOriFc4PDXox5Fjqw==
   dependencies:
-    "@riotjs/compiler" "^6.0.3"
-    "@riotjs/dom-bindings" "6.0.2"
+    "@riotjs/compiler" "^6.1.3"
+    "@riotjs/dom-bindings" "6.0.3"
     "@riotjs/util" "^2.0.4"
     bianco.attr "^1.0.0"
     bianco.query "^1.0.0"
@@ -4837,7 +4847,12 @@ source-map@^0.5.0, source-map@^0.5.6:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
 
-source-map@^0.7.3, source-map@~0.7.2:
+source-map@^0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.4.tgz#a9bbe705c9d8846f4e08ff6765acf0f1b0898656"
+  integrity sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==
+
+source-map@~0.7.2:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
   integrity sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
@@ -5150,9 +5165,9 @@ tr46@^1.0.1:
     punycode "^2.1.0"
 
 tslib@^2.0.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
-  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.6.1.tgz#fd8c9a0ff42590b25703c0acb3de3d3f4ede0410"
+  integrity sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==
 
 tty-browserify@0.0.0:
   version "0.0.0"
