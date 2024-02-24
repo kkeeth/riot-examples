@@ -24,6 +24,6 @@
     "redux": "^4.1.1",
     "redux-promise-middleware": "^6.1.2",
     "redux-thunk": "^2.3.0",
-    "riot": "^6.0.3"
+    "riot": "^9.0.0"
   }
 }
