@@ -4445,9 +4445,9 @@ recast@^0.20.5:
     tslib "^2.0.1"
 
 redux-promise-middleware@^6.1.2:
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/redux-promise-middleware/-/redux-promise-middleware-6.1.2.tgz#1c14222686934be243cbb292e348ef7d5b20d6d2"
-  integrity sha512-ZqZu/nnSzGgwTtNbGoGVontpk7LjTOv0kigtt3CcgXI9gpq+8WlfXTXRZD0WTD5yaohRq0q2nYmJXSTjwXs83Q==
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/redux-promise-middleware/-/redux-promise-middleware-6.2.0.tgz#d139dfef50992d456860f8cf07a12085bd53f89d"
+  integrity sha512-TEzfMeLX63gju2WqkdFQlQMvUGYzFvJNePIJJsBlbPHs3Txsbc/5Rjhmtha1XdMU6lkeiIlp1Qx7AR3Zo9he9g==
 
 redux-thunk@^2.3.0:
   version "2.3.0"
