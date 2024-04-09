@@ -991,9 +991,9 @@
     bianco.query "^1.1.4"
 
 "@riotjs/observable@^4.0.4":
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/@riotjs/observable/-/observable-4.0.4.tgz#c721a99dc452e87bbc6487f9f2f7c7aef73d19dc"
-  integrity sha512-IscZSGID7UL0YLdRL49elEk8hCCENVp8LJH2fyxXCf4tofJa1toF9zl9vKZEk5Eje60ETBMxSzqHJbAC+5j2OQ==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@riotjs/observable/-/observable-4.1.1.tgz#fd039a541a89222851db4a84ab1b8015badf5cc9"
+  integrity sha512-Lp9BUEoUxBlZ6DdZXne9BUfumAXAMznWIgZOcRXIPz2J7avquJKGEXl6D9ObdC0u5LUyrcI4N/AHcHgPclysdw==
 
 "@riotjs/parcel-plugin-riot@6.0.0":
   version "6.0.0"
