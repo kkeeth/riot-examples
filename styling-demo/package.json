@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "@riotjs/observable": "^4.0.4",
-    "riot": "^6.0.3"
+    "riot": "^9.0.0"
   }
 }
