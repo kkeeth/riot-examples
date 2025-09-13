@@ -22,6 +22,6 @@
   "dependencies": {
     "@riotjs/observable": "^4.0.4",
     "riot": "^6.0.3",
-    "semantic-ui-riot": "2.2.4"
+    "semantic-ui-riot": "2.5.3"
   }
 }

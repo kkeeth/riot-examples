@@ -862,6 +862,11 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
+"@babel/runtime@^7.21.0":
+  version "7.28.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.28.3.tgz#75c5034b55ba868121668be5d5bb31cc64e6e61a"
+  integrity sha512-9uIQ10o0WGdpP6GDhXcdOJPJuDgFtIDtN/9+ArJQ2NAfAmiuhTQdzkaTGR33v43GYS2UrSA0eX2pPPHoFVvpxA==
+
 "@babel/runtime@^7.4.4", "@babel/runtime@^7.8.4":
   version "7.15.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.15.3.tgz#2e1c2880ca118e5b2f9988322bd8a7656a32502b"
@@ -2032,10 +2037,12 @@ data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
-date-fns@^1.29.0:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
-  integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
+date-fns@^2.30.0:
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.30.0.tgz#f367e644839ff57894ec6ac480de40cae4b0f4d0"
+  integrity sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==
+  dependencies:
+    "@babel/runtime" "^7.21.0"
 
 deasync@^0.1.14:
   version "0.1.23"
@@ -4675,12 +4682,12 @@ saxes@^3.1.9:
   dependencies:
     xmlchars "^2.1.1"
 
-semantic-ui-riot@2.2.4:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/semantic-ui-riot/-/semantic-ui-riot-2.2.4.tgz#ffbbb6edbe1daa9ce038c73fc750a865dc840dec"
-  integrity sha512-2QSqAH38VyHbWZmdJD1pgN2IPtb8bzBHPJn6bIG3xEfIYZXwgl1Tzj82y0Vmse8bLhyS+ta6F2SZKbua1JyhcA==
+semantic-ui-riot@2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/semantic-ui-riot/-/semantic-ui-riot-2.5.3.tgz#75eab6eb8e5226de2a3c81cd9bbba9bbd7326dce"
+  integrity sha512-ixJTuf4Ybx9pb7Tfkdv5x4Ft19YrsoZfjUi1NKGWbr9KNGSGIL4Yy3KWQ+gEaQUxZKCis8VI0FzgL7gc+aTV3g==
   dependencies:
-    date-fns "^1.29.0"
+    date-fns "^2.30.0"
     q "^1.5.1"
 
 semver@7.0.0:
