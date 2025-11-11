@@ -25,8 +25,8 @@ importers:
         version: 13.0.0
     devDependencies:
       '@riotjs/hot-reload':
-        specifier: ^9.0.1
-        version: 9.0.1(riot@9.4.11)
+        specifier: ^10.0.0
+        version: 10.0.0(riot@9.4.11)
       '@riotjs/lazy':
         specifier: ^9.0.0
         version: 9.0.0(riot@9.4.11)
@@ -203,10 +203,10 @@ packages:
   '@riotjs/dom-bindings@9.2.8':
     resolution: {integrity: sha512-Q9HmhUpleYcKGq0U9rVkYh36JjJ9q4vJ5Ck1ZtarNrr0dJBwgREsnj42wBA+1aFo6MoXT2SJECZfTpAfUEQH9g==}
 
-  '@riotjs/hot-reload@9.0.1':
-    resolution: {integrity: sha512-/S0m0STCmJgQY1nmSJNyFkE4VWc7oeyJTkakHVTB5CYY/aA6FnlENUjhfe23bzfab/gOkrNk3+M8yuZ0x9HO9g==}
+  '@riotjs/hot-reload@10.0.0':
+    resolution: {integrity: sha512-YIbznLj1UYB9k8imyxaKT5It8S2LGMG4oL+CGQTquK9uharpJOC96AGu6hhJhb882nnJye319p1ctaVrxGzitQ==}
     peerDependencies:
-      riot: ^6.0.0 || ^7.0.0 || ^9.0.0
+      riot: ^6.0.0 || ^7.0.0 || ^9.0.0 || ^10.0.0
 
   '@riotjs/lazy@9.0.0':
     resolution: {integrity: sha512-RmDMJViPADzyPifyRb/mFP62K2FRwFOLoUAviFpV2KCRCeccaaI+xouzRUv+XTLAoBy6Ha0YqVRi51Q0aMp3DA==}
@@ -268,67 +268,56 @@ packages:
     resolution: {integrity: sha512-JzWRR41o2U3/KMNKRuZNsDUAcAVUYhsPuMlx5RUldw0E4lvSIXFUwejtYz1HJXohUmqs/M6BBJAUBzKXZVddbg==}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.53.1':
     resolution: {integrity: sha512-L8kRIrnfMrEoHLHtHn+4uYA52fiLDEDyezgxZtGUTiII/yb04Krq+vk3P2Try+Vya9LeCE9ZHU8CXD6J9EhzHQ==}
     cpu: [arm]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.53.1':
     resolution: {integrity: sha512-ysAc0MFRV+WtQ8li8hi3EoFi7us6d1UzaS/+Dp7FYZfg3NdDljGMoVyiIp6Ucz7uhlYDBZ/zt6XI0YEZbUO11Q==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.53.1':
     resolution: {integrity: sha512-UV6l9MJpDbDZZ/fJvqNcvO1PcivGEf1AvKuTcHoLjVZVFeAMygnamCTDikCVMRnA+qJe+B3pSbgX2+lBMqgBhA==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-loong64-gnu@4.53.1':
     resolution: {integrity: sha512-UDUtelEprkA85g95Q+nj3Xf0M4hHa4DiJ+3P3h4BuGliY4NReYYqwlc0Y8ICLjN4+uIgCEvaygYlpf0hUj90Yg==}
     cpu: [loong64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-ppc64-gnu@4.53.1':
     resolution: {integrity: sha512-vrRn+BYhEtNOte/zbc2wAUQReJXxEx2URfTol6OEfY2zFEUK92pkFBSXRylDM7aHi+YqEPJt9/ABYzmcrS4SgQ==}
     cpu: [ppc64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.53.1':
     resolution: {integrity: sha512-gto/1CxHyi4A7YqZZNznQYrVlPSaodOBPKM+6xcDSCMVZN/Fzb4K+AIkNz/1yAYz9h3Ng+e2fY9H6bgawVq17w==}
     cpu: [riscv64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-musl@4.53.1':
     resolution: {integrity: sha512-KZ6Vx7jAw3aLNjFR8eYVcQVdFa/cvBzDNRFM3z7XhNNunWjA03eUrEwJYPk0G8V7Gs08IThFKcAPS4WY/ybIrQ==}
     cpu: [riscv64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-s390x-gnu@4.53.1':
     resolution: {integrity: sha512-HvEixy2s/rWNgpwyKpXJcHmE7om1M89hxBTBi9Fs6zVuLU4gOrEMQNbNsN/tBVIMbLyysz/iwNiGtMOpLAOlvA==}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.53.1':
     resolution: {integrity: sha512-E/n8x2MSjAQgjj9IixO4UeEUeqXLtiA7pyoXCFYLuXpBA/t2hnbIdxHfA7kK9BFsYAoNU4st1rHYdldl8dTqGA==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.53.1':
     resolution: {integrity: sha512-IhJ087PbLOQXCN6Ui/3FUkI9pWNZe/Z7rEIVOzMsOs1/HSAECCvSZ7PkIbkNqL/AZn6WbZvnoVZw/qwqYMo4/w==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-openharmony-arm64@4.53.1':
     resolution: {integrity: sha512-0++oPNgLJHBblreu0SFM7b3mAsBJBTY0Ksrmu9N6ZVrPiTkRgda52mWR7TKhHAsUb9noCjFvAw9l6ZO1yzaVbA==}
@@ -617,7 +606,7 @@ snapshots:
     dependencies:
       '@riotjs/util': 2.5.1
 
-  '@riotjs/hot-reload@9.0.1(riot@9.4.11)':
+  '@riotjs/hot-reload@10.0.0(riot@9.4.11)':
     dependencies:
       bianco.query: 1.1.4
       riot: 9.4.11
