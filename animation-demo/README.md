@@ -6,8 +6,8 @@ First of all, plz execute this commands.
 
 ```cmd
 $ cd ../
-$ yarn install
-$ yarn start
+$ pnpm install
+$ pnpm dev
 ```
 
 Perhaps the browser will open automatically and the application should start.

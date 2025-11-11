@@ -2,28 +2,35 @@
   "name": "giphy-app",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.js",
+  "main": "main.js",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html --out-dir=dist",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "riotjs",
+    "vite",
+    "animejs"
+  ],
   "author": {
     "name": "kkeeth",
-    "email": "<zensin0082@gmail.com>"
+    "email": "zensin0082@gmail.com"
   },
   "license": "MIT",
   "devDependencies": {
-    "@riotjs/hot-reload": "6.0.1",
-    "@riotjs/parcel-plugin-riot": "6.0.0",
-    "parcel-bundler": "1.12.5"
+    "@riotjs/hot-reload": "^9.0.1",
+    "@riotjs/lazy": "^9.0.0",
+    "rollup": "^4.4.1",
+    "rollup-plugin-riot": "^9.0.2",
+    "vite": "^5.0.0"
   },
   "dependencies": {
-    "@riotjs/observable": "^4.0.4",
-    "animejs": "^3.2.1",
+    "@riotjs/observable": "^4.1.1",
+    "animejs": "^3.2.2",
     "animore": "^2.0.3",
-    "riot": "^6.0.3",
+    "riot": "^9.1.1",
     "sanitize.css": "^13.0.0"
   }
 }

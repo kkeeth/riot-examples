@@ -1,22 +1,21 @@
 <app>
-  <div class="app-header">
-    <img src="https://riot.js.org/img/logo/riot-logo.svg" alt="riot logo" class="logo">
-  </div>
-  <h1>{ props.title }</h1>
+  <div class="container">
+    <h1>{ props.title }</h1>
 
-  <ul>
-    <li
-      each={ (item, i) in state.items }
-      key={ item.id }
-    >
-      { `${item.id}: ${item.name}` }
-      <button onclick={ expand } id={ i }>expand</button>
-      <button onclick={ remove } id={ i }>remove</button>
-    </li>
-  </ul>
-  <button onclick={ reload }>reload</button>
-  <button onclick={ add }>add</button>
-  <button onclick={ expandAll }>expand all</button>
+    <ul>
+      <li
+        each={ (item, i) in state.items }
+        key={ item.id }
+      >
+        { `${item.id}: ${item.name}` }
+        <button onclick={ expand } id={ i }>expand</button>
+        <button onclick={ remove } id={ i }>remove</button>
+      </li>
+    </ul>
+    <button onclick={ reload }>reload</button>
+    <button onclick={ add }>add</button>
+    <button onclick={ expandAll }>expand all</button>
+  </div>
 
   <script>
     import anime from 'animejs'
@@ -85,5 +84,4 @@
       }
     }
   </script>
-
 </app>
