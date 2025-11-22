@@ -30,7 +30,7 @@
     "@riotjs/observable": "^4.1.1",
     "animejs": "^3.2.2",
     "animore": "^2.0.3",
-    "riot": "^9.1.1",
+    "riot": "^10.0.0",
     "sanitize.css": "^13.0.0"
   }
 }
