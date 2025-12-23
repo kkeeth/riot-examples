@@ -18,8 +18,8 @@ importers:
         specifier: ^2.0.3
         version: 2.0.3
       riot:
-        specifier: ^9.1.1
-        version: 9.4.11
+        specifier: ^10.0.0
+        version: 10.1.2
       sanitize.css:
         specifier: ^13.0.0
         version: 13.0.0
@@ -29,7 +29,7 @@ importers:
         version: 10.0.0(riot@9.4.11)
       '@riotjs/lazy':
         specifier: ^9.0.0
-        version: 9.0.0(riot@9.4.11)
+        version: 9.0.0(riot@10.1.2)
       rollup:
         specifier: ^4.4.1
         version: 4.53.1
@@ -200,8 +200,8 @@ packages:
   '@riotjs/compiler@10.0.1':
     resolution: {integrity: sha512-jcERAZWNbiHSWVcCk37lGlTxuDLNjBk06DZVBMjNqhvbvcf4zIVJsRRH5kq4/Tv5q4uKgRpZnAhs82Q+AhpUTw==}
 
-  '@riotjs/dom-bindings@9.2.8':
-    resolution: {integrity: sha512-Q9HmhUpleYcKGq0U9rVkYh36JjJ9q4vJ5Ck1ZtarNrr0dJBwgREsnj42wBA+1aFo6MoXT2SJECZfTpAfUEQH9g==}
+  '@riotjs/dom-bindings@10.0.4':
+    resolution: {integrity: sha512-bOvYWhG60GI3tCBfCqmfTQ/M8wvQnR/2JB6a4D5ko7CB1mymdzEZ9G3sV6eh+aXkQ4EX7cMKpxCF7KbCSFPs6A==}
 
   '@riotjs/hot-reload@10.0.0':
     resolution: {integrity: sha512-YIbznLj1UYB9k8imyxaKT5It8S2LGMG4oL+CGQTquK9uharpJOC96AGu6hhJhb882nnJye319p1ctaVrxGzitQ==}
@@ -221,6 +221,9 @@ packages:
 
   '@riotjs/util@10.0.0':
     resolution: {integrity: sha512-m+whXlT693F+8JVITflMLoKp4VxqTaFCBHWom5FULzFAA7VE2ipvQN5u6T//2OT3RyHGp7tQRlDKrVXwEyV7Jg==}
+
+  '@riotjs/util@10.1.2':
+    resolution: {integrity: sha512-K85suj+5YItWHB5N6LO1uMJNH6ZMBl8FxGH2xDb6dl8V3EBlLuQaPQGVzp3SOKKqeqcxJH3o5UHHIgjc2I8YrA==}
 
   '@riotjs/util@2.5.1':
     resolution: {integrity: sha512-P4dC9H3pqsZBk5ffi8BjcRYRvTJpukOj5oRDDClxz/syDHjxZOyOGalLtYVdck3RVb2BYlKWT2rDgy+aDe276w==}
@@ -434,8 +437,8 @@ packages:
     resolution: {integrity: sha512-YTUo+Flmw4ZXiWfQKGcwwc11KnoRAYgzAE2E7mXKCjSviTKShtxBsN6YUUBB2gtaBzKzeKunxhUwNHQuRryhWA==}
     engines: {node: '>= 4'}
 
-  riot@9.4.11:
-    resolution: {integrity: sha512-xLenuo6UAF2IHMWXyCeRYR9vvgl0wgzISbZikfHylMBZvT1Ixbk4k5i6JG+9yKmkHL+FtcZ1Yu7fzsPGNN1ozg==}
+  riot@10.1.2:
+    resolution: {integrity: sha512-cNY7LVWJ6yDcIkIbB814CxpB81uH3aGLZtyupxJjmmftwWvyakxmvxeqe0L/ZGCoLeWcHGaW/Cn98bDXIOVWOQ==}
     engines: {node: '>=18.0.0'}
 
   rollup-plugin-riot@9.0.2:
@@ -602,19 +605,19 @@ snapshots:
       recast: 0.23.11
       source-map: 0.7.6
 
-  '@riotjs/dom-bindings@9.2.8':
+  '@riotjs/dom-bindings@10.0.4':
     dependencies:
-      '@riotjs/util': 2.5.1
+      '@riotjs/util': 10.1.2
 
   '@riotjs/hot-reload@10.0.0(riot@9.4.11)':
     dependencies:
       bianco.query: 1.1.4
-      riot: 9.4.11
+      riot: 10.1.2
 
-  '@riotjs/lazy@9.0.0(riot@9.4.11)':
+  '@riotjs/lazy@9.0.0(riot@10.1.2)':
     dependencies:
       '@riotjs/util': 2.5.1
-      riot: 9.4.11
+      riot: 10.1.2
 
   '@riotjs/observable@4.1.1': {}
 
@@ -624,6 +627,8 @@ snapshots:
       dom-nodes: 1.1.3
 
   '@riotjs/util@10.0.0': {}
+
+  '@riotjs/util@10.1.2': {}
 
   '@riotjs/util@2.5.1': {}
 
@@ -802,9 +807,9 @@ snapshots:
       tiny-invariant: 1.3.3
       tslib: 2.8.1
 
-  riot@9.4.11:
+  riot@10.1.2:
     dependencies:
-      '@riotjs/dom-bindings': 9.2.8
+      '@riotjs/dom-bindings': 10.0.4
 
   rollup-plugin-riot@9.0.2(@riotjs/compiler@10.0.1)(rollup@4.53.1):
     dependencies:
