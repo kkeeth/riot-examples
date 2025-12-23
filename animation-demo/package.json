@@ -20,7 +20,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@riotjs/hot-reload": "^9.0.1",
+    "@riotjs/hot-reload": "^10.0.0",
     "@riotjs/lazy": "^9.0.0",
     "rollup": "^4.4.1",
     "rollup-plugin-riot": "^9.0.2",
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@riotjs/observable": "^4.1.1",
-    "animejs": "^3.2.2",
+    "animejs": "^4.0.0",
     "animore": "^2.0.3",
     "riot": "^10.0.0",
     "sanitize.css": "^13.0.0"

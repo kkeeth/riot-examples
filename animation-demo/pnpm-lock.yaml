@@ -12,8 +12,8 @@ importers:
         specifier: ^4.1.1
         version: 4.1.1
       animejs:
-        specifier: ^3.2.2
-        version: 3.2.2
+        specifier: ^4.0.0
+        version: 4.2.2
       animore:
         specifier: ^2.0.3
         version: 2.0.3
@@ -25,8 +25,8 @@ importers:
         version: 13.0.0
     devDependencies:
       '@riotjs/hot-reload':
-        specifier: ^9.0.1
-        version: 9.0.1(riot@10.1.2)
+        specifier: ^10.0.0
+        version: 10.0.0(riot@9.4.11)
       '@riotjs/lazy':
         specifier: ^9.0.0
         version: 9.0.0(riot@10.1.2)
@@ -203,10 +203,10 @@ packages:
   '@riotjs/dom-bindings@10.0.4':
     resolution: {integrity: sha512-bOvYWhG60GI3tCBfCqmfTQ/M8wvQnR/2JB6a4D5ko7CB1mymdzEZ9G3sV6eh+aXkQ4EX7cMKpxCF7KbCSFPs6A==}
 
-  '@riotjs/hot-reload@9.0.1':
-    resolution: {integrity: sha512-/S0m0STCmJgQY1nmSJNyFkE4VWc7oeyJTkakHVTB5CYY/aA6FnlENUjhfe23bzfab/gOkrNk3+M8yuZ0x9HO9g==}
+  '@riotjs/hot-reload@10.0.0':
+    resolution: {integrity: sha512-YIbznLj1UYB9k8imyxaKT5It8S2LGMG4oL+CGQTquK9uharpJOC96AGu6hhJhb882nnJye319p1ctaVrxGzitQ==}
     peerDependencies:
-      riot: ^6.0.0 || ^7.0.0 || ^9.0.0
+      riot: ^6.0.0 || ^7.0.0 || ^9.0.0 || ^10.0.0
 
   '@riotjs/lazy@9.0.0':
     resolution: {integrity: sha512-RmDMJViPADzyPifyRb/mFP62K2FRwFOLoUAviFpV2KCRCeccaaI+xouzRUv+XTLAoBy6Ha0YqVRi51Q0aMp3DA==}
@@ -350,8 +350,8 @@ packages:
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
-  animejs@3.2.2:
-    resolution: {integrity: sha512-Ao95qWLpDPXXM+WrmwcKbl6uNlC5tjnowlaRYtuVDHHoygjtIPfDUoK9NthrlZsQSKjZXlmji2TrBUAVbiH0LQ==}
+  animejs@4.2.2:
+    resolution: {integrity: sha512-Ys3RuvLdAeI14fsdKCQy7ytu4057QX6Bb7m4jwmfd6iKmUmLquTwk1ut0e4NtRQgCeq/s2Lv5+oMBjz6c7ZuIg==}
 
   animore@2.0.3:
     resolution: {integrity: sha512-7lpQ8O90avYeKyQBXlfdJXU7yeBjbIcQ53Gf8hsS12in7w1UIhviSufjkEv8gcKVwAWXE/6dk3dtDBv1DtSG6g==}
@@ -609,7 +609,7 @@ snapshots:
     dependencies:
       '@riotjs/util': 10.1.2
 
-  '@riotjs/hot-reload@9.0.1(riot@10.1.2)':
+  '@riotjs/hot-reload@10.0.0(riot@9.4.11)':
     dependencies:
       bianco.query: 1.1.4
       riot: 10.1.2
@@ -708,7 +708,7 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
-  animejs@3.2.2: {}
+  animejs@4.2.2: {}
 
   animore@2.0.3:
     dependencies:
