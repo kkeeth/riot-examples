@@ -24,7 +24,7 @@
     "@riotjs/lazy": "^9.0.0",
     "rollup": "^4.4.1",
     "rollup-plugin-riot": "^9.0.2",
-    "vite": "^5.0.0"
+    "vite": "^7.0.0"
   },
   "dependencies": {
     "@riotjs/observable": "^4.1.1",
