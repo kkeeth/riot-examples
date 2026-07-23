@@ -960,10 +960,10 @@
     "@parcel/utils" "^1.11.0"
     physical-cpu-count "^2.0.0"
 
-"@riotjs/dom-bindings@^10.0.4":
-  version "10.0.4"
-  resolved "https://registry.yarnpkg.com/@riotjs/dom-bindings/-/dom-bindings-10.0.4.tgz#8f275f9a6cea80b8cfbb9c64fa7a09ab06c26f58"
-  integrity sha512-bOvYWhG60GI3tCBfCqmfTQ/M8wvQnR/2JB6a4D5ko7CB1mymdzEZ9G3sV6eh+aXkQ4EX7cMKpxCF7KbCSFPs6A==
+"@riotjs/dom-bindings@^10.0.5":
+  version "10.0.5"
+  resolved "https://registry.yarnpkg.com/@riotjs/dom-bindings/-/dom-bindings-10.0.5.tgz#8fd60cf41b47c71fd94f401c3b34375b1fa33900"
+  integrity sha512-REE0AWoSkHYhHN1JiW++vM1gJrewUK5SYZjhfZoaO/GIiX8IYJEDf+DECrMzC8u2cTv5g4P24SgnFUtUD5F8gg==
   dependencies:
     "@riotjs/util" "^10.1.2"
 
@@ -4549,11 +4549,11 @@ rimraf@^2.6.2:
     glob "^7.1.3"
 
 riot@^10.0.0:
-  version "10.1.2"
-  resolved "https://registry.yarnpkg.com/riot/-/riot-10.1.2.tgz#951ab8cea8f7b428b74e9d21b79448f6168dc933"
-  integrity sha512-cNY7LVWJ6yDcIkIbB814CxpB81uH3aGLZtyupxJjmmftwWvyakxmvxeqe0L/ZGCoLeWcHGaW/Cn98bDXIOVWOQ==
+  version "10.1.5"
+  resolved "https://registry.yarnpkg.com/riot/-/riot-10.1.5.tgz#8ccc507fe554ecccfed5602f44edc3492f6a6660"
+  integrity sha512-8kDK4bzs6Rq+t8OErjGccQr9UBEx61sq+oiEyoRPqMueE2ySQrUYZtCKwqEjOOdX3u3PrLP4Wgr9N6A9f+zTSg==
   dependencies:
-    "@riotjs/dom-bindings" "^10.0.4"
+    "@riotjs/dom-bindings" "^10.0.5"
 
 ripemd160@^2.0.0, ripemd160@^2.0.1:
   version "2.0.2"
