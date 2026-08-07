@@ -4683,9 +4683,9 @@ rimraf@^2.6.2:
     glob "^7.1.3"
 
 riot@^10.0.0:
-  version "10.1.5"
-  resolved "https://registry.yarnpkg.com/riot/-/riot-10.1.5.tgz#8ccc507fe554ecccfed5602f44edc3492f6a6660"
-  integrity sha512-8kDK4bzs6Rq+t8OErjGccQr9UBEx61sq+oiEyoRPqMueE2ySQrUYZtCKwqEjOOdX3u3PrLP4Wgr9N6A9f+zTSg==
+  version "10.1.6"
+  resolved "https://registry.yarnpkg.com/riot/-/riot-10.1.6.tgz#725ff17ca823ee4dda31e947bd8c89c2d64f1260"
+  integrity sha512-IbQcwAvmfE+bL6bAhJevtPeYE90N4rW+RBbD/rh/3/JZT57NFv6Di6aTNSyd46PG0sX6A8vZHMCp4UZTUxM+/Q==
   dependencies:
     "@riotjs/dom-bindings" "^10.0.5"
 
