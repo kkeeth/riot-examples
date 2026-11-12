@@ -960,12 +960,12 @@
     "@parcel/utils" "^1.11.0"
     physical-cpu-count "^2.0.0"
 
-"@riotjs/dom-bindings@^10.0.5":
-  version "10.0.5"
-  resolved "https://registry.yarnpkg.com/@riotjs/dom-bindings/-/dom-bindings-10.0.5.tgz#8fd60cf41b47c71fd94f401c3b34375b1fa33900"
-  integrity sha512-REE0AWoSkHYhHN1JiW++vM1gJrewUK5SYZjhfZoaO/GIiX8IYJEDf+DECrMzC8u2cTv5g4P24SgnFUtUD5F8gg==
+"@riotjs/dom-bindings@^10.0.6":
+  version "10.0.6"
+  resolved "https://registry.yarnpkg.com/@riotjs/dom-bindings/-/dom-bindings-10.0.6.tgz#e0526c7f7e29053c3571260c961d7bea4ae17170"
+  integrity sha512-NN+LHTHbf0yxgFr3hNfD5zPrc9eoNeWxrEEcAqb34enEPx8cvN7RjBXfyuUyLaNuiqkVS1BkIriNrNsJCoWS6A==
   dependencies:
-    "@riotjs/util" "^10.1.2"
+    "@riotjs/util" "^10.2.0"
 
 "@riotjs/hot-reload@10.0.0":
   version "10.0.0"
@@ -984,10 +984,10 @@
   resolved "https://registry.yarnpkg.com/@riotjs/parcel-plugin-riot/-/parcel-plugin-riot-6.0.0.tgz#d2c6dfb74ab0ffd5a12964afb22bc1b52b87143b"
   integrity sha512-LbIuZ6Q++7mmUQYJ74zEn3NkE/Fb5wmtP0iqFMdcFYXhuKN+JurCeRVyH/zbxyUMcoUMD/V4//3a3Wr/Z3l8Xg==
 
-"@riotjs/util@^10.1.2":
-  version "10.1.2"
-  resolved "https://registry.yarnpkg.com/@riotjs/util/-/util-10.1.2.tgz#6ad39e7cb6751648587a68ed93bc0696fe393a52"
-  integrity sha512-K85suj+5YItWHB5N6LO1uMJNH6ZMBl8FxGH2xDb6dl8V3EBlLuQaPQGVzp3SOKKqeqcxJH3o5UHHIgjc2I8YrA==
+"@riotjs/util@^10.2.0":
+  version "10.2.0"
+  resolved "https://registry.yarnpkg.com/@riotjs/util/-/util-10.2.0.tgz#ee1090d242647ffcebc6a72cd1f9c3f9441e32ca"
+  integrity sha512-LoLnEQHEWQCwaPr9kQ5/px3TahoHlpPkegyqxCjPZBd0EFQj+SzxXOLQzLBJqFFdVqgtV8qhT9+NHp2E6ZKz8Q==
 
 "@types/q@^1.5.1":
   version "1.5.5"
@@ -4534,11 +4534,11 @@ rimraf@^2.6.2:
     glob "^7.1.3"
 
 riot@^10.0.0:
-  version "10.1.5"
-  resolved "https://registry.yarnpkg.com/riot/-/riot-10.1.5.tgz#8ccc507fe554ecccfed5602f44edc3492f6a6660"
-  integrity sha512-8kDK4bzs6Rq+t8OErjGccQr9UBEx61sq+oiEyoRPqMueE2ySQrUYZtCKwqEjOOdX3u3PrLP4Wgr9N6A9f+zTSg==
+  version "10.1.7"
+  resolved "https://registry.yarnpkg.com/riot/-/riot-10.1.7.tgz#d5943e43713bb26670ac7df9a6b10d7cf1b2db89"
+  integrity sha512-kw41XKpn/AogXLTDGjIfZ/Yy+xNhlOFHg9YRnd1J12njxIddn42jeo3XRaXCAlWM7ZZEnogW2Ya0765i9WKm5w==
   dependencies:
-    "@riotjs/dom-bindings" "^10.0.5"
+    "@riotjs/dom-bindings" "^10.0.6"
 
 ripemd160@^2.0.0, ripemd160@^2.0.1:
   version "2.0.2"
