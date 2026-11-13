@@ -26,7 +26,7 @@ importers:
     devDependencies:
       '@riotjs/hot-reload':
         specifier: ^10.0.0
-        version: 10.0.0(riot@10.1.5)
+        version: 10.0.1(riot@10.1.5)
       '@riotjs/lazy':
         specifier: ^10.0.0
         version: 10.0.0(riot@10.1.5)
@@ -203,8 +203,8 @@ packages:
   '@riotjs/dom-bindings@10.0.5':
     resolution: {integrity: sha512-REE0AWoSkHYhHN1JiW++vM1gJrewUK5SYZjhfZoaO/GIiX8IYJEDf+DECrMzC8u2cTv5g4P24SgnFUtUD5F8gg==}
 
-  '@riotjs/hot-reload@10.0.0':
-    resolution: {integrity: sha512-YIbznLj1UYB9k8imyxaKT5It8S2LGMG4oL+CGQTquK9uharpJOC96AGu6hhJhb882nnJye319p1ctaVrxGzitQ==}
+  '@riotjs/hot-reload@10.0.1':
+    resolution: {integrity: sha512-P+LI+zUEKld55NzHe12gMx9E0019VlapwwHZhdhQiDnnR6Sae7zrgQcf+OXaEK2/5odedFHAs6Xfu8gKPh/rzg==}
     peerDependencies:
       riot: ^6.0.0 || ^7.0.0 || ^9.0.0 || ^10.0.0
 
@@ -639,7 +639,7 @@ snapshots:
     dependencies:
       '@riotjs/util': 10.1.2
 
-  '@riotjs/hot-reload@10.0.0(riot@10.1.5)':
+  '@riotjs/hot-reload@10.0.1(riot@10.1.5)':
     dependencies:
       bianco.query: 1.1.4
       riot: 10.1.5
